@@ -1,8 +1,20 @@
-# Template that includes devise, BS5
+
+## Active Storage
+```
+rails active_storage:install
+rails db:migrate
+
+
+```
+
+
+
+
+## Template that includes devise, BS5
 - The following are how features and config were applied.
 
-## Postgres for all envs
-- change database.yml for all pg
+## Postgres for prod env
+- change database.yml 
 - `rails db:create`
 - `rails s`  instead of  `bin/dev`
 

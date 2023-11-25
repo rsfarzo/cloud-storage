@@ -15,5 +15,8 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/toast' %>
     <%= yield %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/file_mgr' %>  
+    <% end %>
   </body>
 </html>

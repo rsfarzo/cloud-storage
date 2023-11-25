@@ -154,3 +154,309 @@ Migrating to DeviseCreateUsers (20230915173822)
   [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20231125023435)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231125023435"]]
+  [1m[36mTRANSACTION (46.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 10.240.0.113 at 2023-11-25 02:53:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 427)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 717)
+  Rendered shared/_toast.html.erb (Duration: 0.5ms | Allocations: 265)
+  Rendered layout layouts/application.html.erb (Duration: 3107.2ms | Allocations: 186946)
+Completed 500 Internal Server Error in 4168ms (ActiveRecord: 0.0ms | Allocations: 1172874)
+
+
+
+ActionView::MissingTemplate - Missing partial home/_file_mgr, application/_file_mgr with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/workspaces/cloud-storage/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/turbo-rails-1.4.0/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actiontext-7.0.8/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actionmailbox-7.0.8/app/views":
+  app/views/layouts/application.html.erb:19
+
+Started POST "/__better_errors/30b3926bd6bfa237/variables" for 10.240.0.113 at 2023-11-25 02:53:36 +0000
+Started GET "/" for 10.240.0.113 at 2023-11-25 02:54:36 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 95)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 522)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 7446)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 8565)
+
+
+Started GET "/users/sign_in" for 10.240.0.113 at 2023-11-25 02:54:39 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 588)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 10239)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 16522)
+Completed 200 OK in 34ms (Views: 23.7ms | ActiveRecord: 0.5ms | Allocations: 24385)
+
+
+Started POST "/users/sign_in" for 10.240.0.113 at 2023-11-25 02:54:45 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bob@mail.net"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.2ms | Allocations: 5117)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 6515)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 112)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 12659)
+Completed 200 OK in 251ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 13430)
+
+
+Started POST "/users/sign_in" for 10.240.0.113 at 2023-11-25 02:54:50 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bob@mail.net"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms | Allocations: 1519)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 6553)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 12694)
+Completed 200 OK in 241ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 13232)
+
+
+Started GET "/" for 10.240.0.113 at 2023-11-25 02:54:52 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 186)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 6410)
+Completed 200 OK in 8ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 6680)
+
+
+Started GET "/users/sign_in" for 10.240.0.113 at 2023-11-25 02:54:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 6542)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 12730)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 13386)
+
+
+Started POST "/users/sign_in" for 10.240.0.113 at 2023-11-25 02:54:58 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bob@mail.net"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms | Allocations: 1500)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 6552)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 12693)
+Completed 200 OK in 266ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 13232)
+
+
+Started POST "/users/sign_in" for 10.240.0.113 at 2023-11-25 02:55:07 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bob@mail.net"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms | Allocations: 1503)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 6552)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 12693)
+Completed 200 OK in 252ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 13231)
+
+
+Started GET "/users/sign_up" for 10.240.0.113 at 2023-11-25 02:55:09 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 5726)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 173)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 12016)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 13346)
+
+
+Started POST "/users" for 10.240.0.113 at 2023-11-25 02:55:25 +0000
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Me Up"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f0fa63c4940>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bob@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Me Up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bob@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bob@mail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-11-25 02:55:25.604108"], ["updated_at", "2023-11-25 02:55:25.604108"]]
+  [1m[36mTRANSACTION (33.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 271ms (ActiveRecord: 34.1ms | Allocations: 10749)
+
+
+Started GET "/" for 10.240.0.113 at 2023-11-25 02:55:25 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 1007)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 9735)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 10024)
+
+
+
+ActionView::MissingTemplate - Missing partial layouts/_file_mgr with {:locale=>[:en], :formats=>[:html, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/workspaces/cloud-storage/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/turbo-rails-1.4.0/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actiontext-7.0.8/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actionmailbox-7.0.8/app/views":
+  app/views/layouts/application.html.erb:19
+
+Started POST "/__better_errors/5130f6e6f804b569/variables" for 10.240.0.113 at 2023-11-25 02:55:25 +0000
+Started GET "/users/sign_up" for 10.240.0.113 at 2023-11-25 02:56:29 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1562)
+
+
+Started GET "/" for 10.240.0.113 at 2023-11-25 02:56:29 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 95)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 1237)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 10704)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms | Allocations: 11743)
+
+
+
+ActionView::MissingTemplate - Missing partial layouts/_file_mgr with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/workspaces/cloud-storage/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/turbo-rails-1.4.0/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actiontext-7.0.8/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actionmailbox-7.0.8/app/views":
+  app/views/layouts/application.html.erb:19
+
+Started POST "/__better_errors/b18d0144f1ee47bb/variables" for 10.240.0.113 at 2023-11-25 02:56:30 +0000
+Started GET "/" for 10.240.0.113 at 2023-11-25 02:57:06 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 95)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 1237)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered layouts/_file_mgr.html.erb (Duration: 0.8ms | Allocations: 2580)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 10974)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms | Allocations: 12016)
+
+
+
+NameError - undefined local variable or method `f' for #<ActionView::Base:0x00000000011d00>:
+  app/views/layouts/_file_mgr.html.erb:1
+  app/views/layouts/application.html.erb:19
+
+Started POST "/__better_errors/af80fcdc5cf64707/variables" for 10.240.0.113 at 2023-11-25 02:57:06 +0000
+Started GET "/" for 10.240.0.10 at 2023-11-25 02:59:26 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 95)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 1240)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered layouts/_file_mgr.html.erb (Duration: 1.2ms | Allocations: 2618)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 11025)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms | Allocations: 12065)
+
+
+
+NameError - undefined local variable or method `resource' for #<ActionView::Base:0x00000000011eb8>:
+  app/views/layouts/_file_mgr.html.erb:1
+  app/views/layouts/application.html.erb:19
+
+Started POST "/__better_errors/444378e5c7aa9d39/variables" for 10.240.0.10 at 2023-11-25 02:59:26 +0000
+Started GET "/" for 10.240.4.209 at 2023-11-25 03:04:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 283)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 35.5ms | Allocations: 11336)
+  Rendered shared/_toast.html.erb (Duration: 3.8ms | Allocations: 278)
+  Rendered layouts/_file_mgr.html.erb (Duration: 35.4ms | Allocations: 4750)
+  Rendered layout layouts/application.html.erb (Duration: 193.3ms | Allocations: 90097)
+Completed 200 OK in 340ms (Views: 197.7ms | ActiveRecord: 0.5ms | Allocations: 375527)
+
+
