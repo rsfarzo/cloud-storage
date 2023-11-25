@@ -1405,3 +1405,348 @@ Redirected to https://storage-s3-123.s3.amazonaws.com/1etbqlqyhy08jarlie0pgthdva
 Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2093)
 
 
+Started DELETE "/users/sign_out" for 10.240.2.100 at 2023-11-25 22:16:23 +0000
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 4ms (ActiveRecord: 0.1ms | Allocations: 2388)
+
+
+Started GET "/" for 10.240.2.100 at 2023-11-25 22:16:23 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 94)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 209)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 6668)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 7336)
+
+
+Started GET "/users/sign_in" for 10.240.2.100 at 2023-11-25 22:16:28 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 587)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 7878)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 14138)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 15366)
+
+
+Started POST "/users/sign_in" for 10.240.2.100 at 2023-11-25 22:16:32 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alice@email.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "alice@email.net"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 230ms (ActiveRecord: 0.2ms | Allocations: 1742)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"alice@email.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 6584)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 12842)
+Completed 200 OK in 245ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 13382)
+
+
+Started GET "/users/sign_up" for 10.240.2.100 at 2023-11-25 22:16:39 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 5608)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 156)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 11906)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 12727)
+
+
+Started POST "/users" for 10.240.2.100 at 2023-11-25 22:16:58 +0000
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Me Up"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f24503237c0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Me Up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "do@email.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "do@email.net"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-11-25 22:16:58.434756"], ["updated_at", "2023-11-25 22:16:58.434756"]]
+  [1m[36mTRANSACTION (38.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 277ms (ActiveRecord: 39.6ms | Allocations: 7140)
+
+
+Started GET "/" for 10.240.2.100 at 2023-11-25 22:16:58 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 907)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 7148)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 7420)
+
+
+Started GET "/users/edit" for 10.240.2.100 at 2023-11-25 22:17:04 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 4418)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4505)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 6190)
+
+
+
+NoMethodError - undefined method `persisted?' for nil:NilClass:
+  app/views/devise/registrations/edit.html.erb:1
+
+Started POST "/__better_errors/8c4f12ef858507fa/variables" for 10.240.2.100 at 2023-11-25 22:17:04 +0000
+Started POST "/__better_errors/8c4f12ef858507fa/eval" for 10.240.2.100 at 2023-11-25 22:17:15 +0000
+Started POST "/__better_errors/8c4f12ef858507fa/eval" for 10.240.2.100 at 2023-11-25 22:17:25 +0000
+Started POST "/__better_errors/8c4f12ef858507fa/eval" for 10.240.2.100 at 2023-11-25 22:17:51 +0000
+Started POST "/__better_errors/8c4f12ef858507fa/eval" for 10.240.2.100 at 2023-11-25 22:18:08 +0000
+Started POST "/__better_errors/8c4f12ef858507fa/eval" for 10.240.2.100 at 2023-11-25 22:18:20 +0000
+Started GET "/" for 10.240.2.100 at 2023-11-25 22:18:27 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 899)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 7268)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 7533)
+
+
+Started DELETE "/users/sign_out" for 10.240.2.100 at 2023-11-25 22:18:29 +0000
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 3ms (ActiveRecord: 0.1ms | Allocations: 1827)
+
+
+Started GET "/" for 10.240.2.100 at 2023-11-25 22:18:29 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 186)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6559)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 6829)
+
+
+Started GET "/users/sign_in" for 10.240.2.100 at 2023-11-25 22:18:31 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 6558)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 12845)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 13514)
+
+
+Started POST "/users/sign_in" for 10.240.2.100 at 2023-11-25 22:18:37 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"so@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "so@mail.net"], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 232ms (ActiveRecord: 0.1ms | Allocations: 3429)
+
+
+Started GET "/" for 10.240.2.100 at 2023-11-25 22:18:37 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 899)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 7146)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 7416)
+
+
+Started GET "/users/edit" for 10.240.2.100 at 2023-11-25 22:18:41 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 9.8ms | Allocations: 7865)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 13988)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.2ms | Allocations: 15695)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7360234a570c23406cc422594d35dce757b35e33/67363386239__6330272C-DC1D-4F9D-A29C-49ECCD491CC4.JPEG" for 10.240.2.100 at 2023-11-25 22:18:41 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7360234a570c23406cc422594d35dce757b35e33", "filename"=>"67363386239__6330272C-DC1D-4F9D-A29C-49ECCD491CC4"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: 1etbqlqyhy08jarlie0pgthdvax8 (https://storage-s3-123.s3.amazonaws.com/1etbqlqyhy08jarlie0pgthdvax8?response-content-disposition=inline%3B%20filename%3D%2267363386239__6330272C-DC1D-4F9D-A29C-49ECCD491CC4.JPEG%22%3B%20filename%2A%3DUTF-8%27%2767363386239__6330272C-DC1D-4F9D-A29C-49ECCD491CC4.JPEG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231125%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231125T221841Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fc541338ac01c0d5a1ecc7fab430693220cef78caa4e3e86ac34ab86176f47e2)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/1etbqlqyhy08jarlie0pgthdvax8?response-content-disposition=inline%3B%20filename%3D%2267363386239__6330272C-DC1D-4F9D-A29C-49ECCD491CC4.JPEG%22%3B%20filename%2A%3DUTF-8%27%2767363386239__6330272C-DC1D-4F9D-A29C-49ECCD491CC4.JPEG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231125%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231125T221841Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fc541338ac01c0d5a1ecc7fab430693220cef78caa4e3e86ac34ab86176f47e2
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2093)
+
+
+Started GET "/users/edit" for 10.240.4.209 at 2023-11-25 22:20:03 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 9.1ms | Allocations: 8417)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 435)
+  Rendered shared/_toast.html.erb (Duration: 0.6ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 15640)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.3ms | Allocations: 18388)
+
+
+Started DELETE "/users/sign_out" for 10.240.4.209 at 2023-11-25 22:20:05 +0000
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 4ms (ActiveRecord: 0.1ms | Allocations: 1791)
+
+
+Started GET "/" for 10.240.4.209 at 2023-11-25 22:20:06 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 94)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 208)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 6661)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 7327)
+
+
+Started GET "/users/sign_in" for 10.240.4.209 at 2023-11-25 22:20:08 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 509)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 7343)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 164)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 13596)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 14738)
+
+
+Started POST "/users/sign_in" for 10.240.4.209 at 2023-11-25 22:20:12 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "do@email.net"], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 232ms (ActiveRecord: 0.1ms | Allocations: 3634)
+
+
+Started GET "/" for 10.240.4.209 at 2023-11-25 22:20:12 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 907)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7157)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms | Allocations: 7429)
+
+
+Started GET "/users/edit" for 10.240.4.209 at 2023-11-25 22:20:16 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 10.5ms | Allocations: 8111)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 107)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 14370)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.3ms | Allocations: 16079)
+
+
+Started PUT "/users" for 10.240.4.209 at 2023-11-25 22:21:03 +0000
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f241b6a9a78 @tempfile=#<Tempfile:/tmp/RackMultipart20231125-24816-ayrhmq.JPEG>, @content_type="image/jpeg", @original_filename="68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x00007f24502115f8>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f241b6a9a78 @tempfile=#<Tempfile:/tmp/RackMultipart20231125-24816-ayrhmq.JPEG>, @content_type="image/jpeg", @original_filename="68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "[FILTERED]"], ["updated_at", "2023-11-25 22:21:04.377461"], ["id", 6]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "cly8vlnuppbdbivtf8a4qy2vp547"], ["filename", "68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 1899157], ["checksum", "77TmA03sW+daOKx+HWgBAA=="], ["created_at", "2023-11-25 22:21:04.386388"]]
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 6], ["blob_id", 5], ["created_at", "2023-11-25 22:21:04.388708"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-25 22:21:04.390620"], ["id", 6]]
+  [1m[36mTRANSACTION (26.1ms)[0m  [1m[36mcommit transaction[0m
+[36m  S3 Storage (128.7ms) [0m[32mUploaded file to key: cly8vlnuppbdbivtf8a4qy2vp547 (checksum: 77TmA03sW+daOKx+HWgBAA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 4d6e68e3-970e-4473-ba5b-bef936381751) to Async(default) with arguments: #<GlobalID:0x00007f2450602a90 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/5>>
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x00007f24502115f8>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f241b6a9a78 @tempfile=#<Tempfile:/tmp/RackMultipart20231125-24816-ayrhmq.JPEG>, @content_type="image/jpeg", @original_filename="68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x00007f24502115f8>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f241b6a9a78 @tempfile=#<Tempfile:/tmp/RackMultipart20231125-24816-ayrhmq.JPEG>, @content_type="image/jpeg", @original_filename="68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Devise::RegistrationsController, action: update, request: #<ActionDispatch::Request:0x00007f24502115f8>, params: {"_method"=>"put", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"do@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f241b6a9a78 @tempfile=#<Tempfile:/tmp/RackMultipart20231125-24816-ayrhmq.JPEG>, @content_type="image/jpeg", @original_filename="68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update", "controller"=>"devise/registrations", "action"=>"update"} }[0m
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 644ms (ActiveRecord: 27.9ms | Allocations: 21235)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4d6e68e3-970e-4473-ba5b-bef936381751]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4d6e68e3-970e-4473-ba5b-bef936381751] Performing ActiveStorage::AnalyzeJob (Job ID: 4d6e68e3-970e-4473-ba5b-bef936381751) from Async(default) enqueued at 2023-11-25T22:21:04Z with arguments: #<GlobalID:0x00007f24505b3288 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4d6e68e3-970e-4473-ba5b-bef936381751] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4d6e68e3-970e-4473-ba5b-bef936381751]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4d6e68e3-970e-4473-ba5b-bef936381751]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4d6e68e3-970e-4473-ba5b-bef936381751]   [1m[36mTRANSACTION (25.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4d6e68e3-970e-4473-ba5b-bef936381751] Performed ActiveStorage::AnalyzeJob (Job ID: 4d6e68e3-970e-4473-ba5b-bef936381751) from Async(default) in 55.34ms
+Started GET "/" for 10.240.4.209 at 2023-11-25 22:21:04 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 899)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 7288)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.1ms | Allocations: 7558)
+
+
+Started GET "/users/edit" for 10.240.4.209 at 2023-11-25 22:21:07 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 12.4ms | Allocations: 7862)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 14121)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.2ms | Allocations: 15813)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c53a6b8dbdcbab8c3c319d10055e3dc7be162473/68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG" for 10.240.4.209 at 2023-11-25 22:21:07 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c53a6b8dbdcbab8c3c319d10055e3dc7be162473", "filename"=>"68885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  S3 Storage (1.5ms) [0m[34mGenerated URL for file at key: cly8vlnuppbdbivtf8a4qy2vp547 (https://storage-s3-123.s3.amazonaws.com/cly8vlnuppbdbivtf8a4qy2vp547?response-content-disposition=inline%3B%20filename%3D%2268885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG%22%3B%20filename%2A%3DUTF-8%27%2768885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231125%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231125T222107Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=81900410930799e0e6ede44aec71350fbd7baf5463c49720803e3a31a2ca191f)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/cly8vlnuppbdbivtf8a4qy2vp547?response-content-disposition=inline%3B%20filename%3D%2268885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG%22%3B%20filename%2A%3DUTF-8%27%2768885675224__68C7D577-03E1-4E59-9734-0A9A4CEAF3E7.JPEG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231125%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231125T222107Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=81900410930799e0e6ede44aec71350fbd7baf5463c49720803e3a31a2ca191f
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2093)
+
+

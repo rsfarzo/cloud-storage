@@ -1,4 +1,8 @@
-<IMG src="<%= url_for(@user.avatar) %>" style="height:100px">
+<% if @user.avatar.persisted? %>
+  <IMG src="<%= url_for(@user.avatar) %>" style="height:100px">
+<% else %>
+  No avatar
+<% end %>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
