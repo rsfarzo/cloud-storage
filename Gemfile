@@ -11,7 +11,7 @@ gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -73,12 +73,10 @@ group :test do
   gem "webdrivers"
 end
 
-# AppDev Gems
-# ===========
-#gem "appdev_support"
+
 gem "awesome_print"
 gem "devise"       # to be removed
-gem "dotenv-rails"
+gem "dotenv-rails", groups: [:development, :test]
 gem "faker"
 gem "htmlbeautifier"
 gem "http"

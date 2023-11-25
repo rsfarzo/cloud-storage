@@ -6,7 +6,7 @@ rails db:migrate
 
 
 ```
-
+https://www.honeybadger.io/blog/rails-app-aws-s3/
 
 
 
