@@ -20,10 +20,7 @@
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
   </div>
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
-  </div>
+
   <div class="form-actions">
     <%= f.button :submit, "Update", class: "btn btn-outline-primary mr-2" %>
     <%= link_to "Cancel", :back , class: "btn btn-outline-secondary mr-2" %>
