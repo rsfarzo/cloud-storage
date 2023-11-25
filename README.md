@@ -6,9 +6,9 @@ rails db:migrate
 
 
 ```
-Avatar example honeybadger https://www.honeybadger.io/blog/rails-app-aws-s3/
-AWS config https://github.com/aws/aws-sdk-ruby#configuration
-
+[Avatar example honeybadger](https://www.honeybadger.io/blog/rails-app-aws-s3/)
+[AWS config](https://github.com/aws/aws-sdk-ruby#configuration)
+[Ruby on rails doc](https://edgeguides.rubyonrails.org/active_storage_overview.html)
 
 
 
