@@ -6,12 +6,18 @@ rails db:migrate
 
 
 ```
+- [Overview](https://edgeguides.rubyonrails.org/active_storage_overview.html)
 - [Avatar example honeybadger](https://www.honeybadger.io/blog/rails-app-aws-s3/)
 - [AWS config](https://github.com/aws/aws-sdk-ruby#configuration)
 - [Ruby on rails doc](https://edgeguides.rubyonrails.org/active_storage_overview.html)
+- [Validations, Enc](https://pragmaticstudio.com/tutorials/using-active-storage-in-rails)
 - [Validations](https://github.com/igorkasyanchuk/active_storage_validations)
 - [Multi files](https://medium.com/@jedwardmook/uploading-multiple-files-using-rails-active-storage-and-react-219f07b5ac25)
+- [Multiple storage services](https://discuss.rubyonrails.org/t/activestorage-with-multiple-storage-services-and-multiple-environments-issue/82497)
 
+```
+gem "dotenv-rails"
+```
 
 ## Template that includes devise, BS5
 - The following are how features and config were applied.
