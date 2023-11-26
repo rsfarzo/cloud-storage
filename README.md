@@ -16,6 +16,7 @@ rails db:migrate
 - [Multiple storage services](https://discuss.rubyonrails.org/t/activestorage-with-multiple-storage-services-and-multiple-environments-issue/82497)
 - [Carrierwave and Cloudinary](https://cloudinary.com/documentation/rails_carrierwave)
 - [Tutorial Cloudinary](https://training.cloudinary.com/courses/introduction-for-api-users-and-ruby-developers)
+- [Github cloudinary](https://github.com/cloudinary-training/cld-intro-ruby)
 ```
 gem "dotenv-rails"
 ```
