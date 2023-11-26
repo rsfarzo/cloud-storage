@@ -1,5 +1,5 @@
 
-## Active Storage
+# Active Storage
 
 - Uses AWS S3 for `User.avatar Post.image Post.images[]`
   - no migrations necessary
@@ -8,8 +8,6 @@
 ```
 rails active_storage:install
 rails db:migrate
-
-
 ```
 - [Overview](https://edgeguides.rubyonrails.org/active_storage_overview.html)
 - [Avatar example honeybadger](https://www.honeybadger.io/blog/rails-app-aws-s3/)
