@@ -14,7 +14,7 @@ rails db:migrate
 - [Validations](https://github.com/igorkasyanchuk/active_storage_validations)
 - [Multi files](https://medium.com/@jedwardmook/uploading-multiple-files-using-rails-active-storage-and-react-219f07b5ac25)
 - [Multiple storage services](https://discuss.rubyonrails.org/t/activestorage-with-multiple-storage-services-and-multiple-environments-issue/82497)
-
+- [Carrierwave and Cloudinary](https://cloudinary.com/documentation/rails_carrierwave)
 ```
 gem "dotenv-rails"
 ```
