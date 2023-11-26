@@ -1,5 +1,10 @@
 
 ## Active Storage
+
+- Uses AWS S3 for `User.avatar Post.image Post.images[]`
+  - no migrations necessary
+- Uses Cloudinary & Carrierwave for `Post.avatar`
+
 ```
 rails active_storage:install
 rails db:migrate

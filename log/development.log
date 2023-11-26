@@ -12811,3 +12811,73 @@ Redirected to https://storage-s3-123.s3.amazonaws.com/t2o7nr82datgxaw9ud7nnc4bye
 Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2085)
 
 
+Started GET "/rails/db/tables/posts/data" for 10.240.2.100 at 2023-11-26 20:41:30 +0000
+Processing by RailsDb::TablesController#data as HTML
+  Parameters: {"table_id"=>"posts"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendering layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.3ms | Allocations: 177)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 8.7ms | Allocations: 8170)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 4.9ms | Allocations: 7737)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.1ms | Allocations: 1205)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.6ms | Allocations: 928)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 928)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 928)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.7ms | Allocations: 928)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 928)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 931)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 931)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 45.6ms | Allocations: 38415)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.html.erb within layouts/rails_db/application (Duration: 46.3ms | Allocations: 38657)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_header.html.erb (Duration: 1.7ms | Allocations: 1702)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_sidebar.html.erb (Duration: 0.9ms | Allocations: 730)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_gems.html.erb (Duration: 0.5ms | Allocations: 541)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_footer.html.erb (Duration: 1.8ms | Allocations: 1705)
+  Rendered layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb (Duration: 59.6ms | Allocations: 51232)
+Completed 200 OK in 65ms (Views: 53.2ms | ActiveRecord: 7.7ms | Allocations: 54531)
+
+
+Started GET "/rails/db/tables/active_storage_variant_records/data" for 10.240.2.100 at 2023-11-26 20:41:38 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_variant_records"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_variant_records"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 3.9ms | Allocations: 7039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 7.3ms | Allocations: 6705)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 20.1ms | Allocations: 20671)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 21.6ms | Allocations: 22627)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 0.8ms | Allocations: 25665)
+
+
+Started GET "/rails/db/tables/active_storage_blobs/data" for 10.240.2.100 at 2023-11-26 20:41:40 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_blobs"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_blobs"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 7.3ms | Allocations: 10145)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 6.6ms | Allocations: 9456)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1043)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.7ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.7ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.6ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.6ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 64.9ms | Allocations: 57016)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 66.8ms | Allocations: 61709)
+Completed 200 OK in 71ms (Views: 57.3ms | ActiveRecord: 10.2ms | Allocations: 64271)
+
+
