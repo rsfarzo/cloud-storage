@@ -30,13 +30,50 @@ cloudinary_key=00000000000000000
 cloudinary_secret=00000000000000000000000
 CLOUDINARY_URL=cloudinary://5544487:3333333333333333333333
 ```
-- In user model: `has_one_attached :avatar`
-- In application_controller.rb configure_permitted_parameters to permit: ` :avatar`
-- In new.html.erb: 
+- In `config/storage.yml`:
+```
+amazon:
+   service: S3
+   access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
+   secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
+   region: <%= ENV["AWS_REGION"] %>
+   bucket: <%= ENV["S3_BUCKET"] %>
+```
+### User avatar with s3:
+- In `user.rb` model: `has_one_attached :avatar`
+- In `application_controller.rb` configure_permitted_parameters to permit: ` :avatar`
+- In `new.html.erb: 
 ```
   <%= f.label :avatar %>
   <%= f.file_field :avatar %>
 ```
+- `user#edit.html.erb`
+```
+<% if @user.avatar.persisted? %>
+  <%= image_tag(url_for(@user.avatar), style:"height:100px") %>
+<% end %>
+```
+### Post image and images[] with S3, and avatar with cloudinary:
+- `post.rb` model
+```
+    has_one_attached :image
+    has_many_attached :images
+    mount_uploader :avatar, AvatarUploader
+```
+- post#edit.html.erb:
+```
+  <div>
+    <%= form.file_field :image  %><br>
+  </div>
+  <diV>
+    <%= form.file_field :images, multiple: true  %><br>
+  </div>
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+  ```
+
 
 
 - [Overview](https://edgeguides.rubyonrails.org/active_storage_overview.html)
@@ -55,12 +92,21 @@ CLOUDINARY_URL=cloudinary://5544487:3333333333333333333333
 - [Github cloudinary](https://github.com/cloudinary-training/cld-intro-ruby)
 - [Carrierwave gist](https://gist.github.com/Hinsei/346eebe1175e49296b13a5f1e28850a6)
 
+Continuing with example:
+
+- Generater an uploaded, modify Posts to include a string for the image
 ```
 rails generate uploader Avatar
 rails generate migration add_avatar_to_posts avatar:string
 rails db:migrate
 ```
-Mount the uploader to the posts model:
+- In `app/uploaders/avatar_uploaded`, comment out everything except:
+```
+class AvatarUploader < CarrierWave::Uploader::Base
+  include Cloudinary::CarrierWave
+end
+```
+- Mount the uploader to the posts model:
 ```
 mount_uploader :imagelib, AvatarUploader
 ```

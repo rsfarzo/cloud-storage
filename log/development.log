@@ -14029,3 +14029,253 @@ Redirected to https://storage-s3-123.s3.amazonaws.com/outft6q67ehphngfayt2e1ik0q
 Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 3924)
 
 
+Started GET "/users/edit" for 10.240.0.113 at 2023-11-26 22:44:16 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (85.6ms) [0m[34mDownloaded file from key: outft6q67ehphngfayt2e1ik0qv9[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 94.0ms | Allocations: 10626)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 102.9ms | Allocations: 18106)
+Completed 200 OK in 112ms (Views: 104.7ms | ActiveRecord: 0.6ms | Allocations: 21043)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17590168eba0774d216216273a8247de4ab8d5b6/IMG_2765.PNG" for 10.240.0.113 at 2023-11-26 22:44:16 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17590168eba0774d216216273a8247de4ab8d5b6", "filename"=>"IMG_2765"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[36m  S3 Storage (1.1ms) [0m[34mGenerated URL for file at key: outft6q67ehphngfayt2e1ik0qv9 (https://storage-s3-123.s3.amazonaws.com/outft6q67ehphngfayt2e1ik0qv9?response-content-disposition=inline%3B%20filename%3D%22IMG_2765.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2765.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T224416Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8dabd529ba956032f951d08217692366fb9cfa472d32f021a6032deb016ecea4)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/outft6q67ehphngfayt2e1ik0qv9?response-content-disposition=inline%3B%20filename%3D%22IMG_2765.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2765.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T224416Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8dabd529ba956032f951d08217692366fb9cfa472d32f021a6032deb016ecea4
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2092)
+
+
+Started GET "/users/edit" for 10.240.0.113 at 2023-11-26 22:45:14 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4776)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4864)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 7606)
+
+
+
+NoMethodError - undefined method `symbolize_keys' for "height:100px":String:
+  app/views/devise/registrations/edit.html.erb:3
+
+Started POST "/__better_errors/4b7735cfe66794ba/variables" for 10.240.0.113 at 2023-11-26 22:45:14 +0000
+Started GET "/users/edit" for 10.240.0.113 at 2023-11-26 22:45:30 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (96.8ms) [0m[34mDownloaded file from key: outft6q67ehphngfayt2e1ik0qv9[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 105.1ms | Allocations: 10575)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 114.4ms | Allocations: 18054)
+Completed 200 OK in 122ms (Views: 116.4ms | ActiveRecord: 0.2ms | Allocations: 20800)
+
+
+Started GET "/posts" for 10.240.3.217 at 2023-11-26 22:54:09 +0000
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  Rendered posts/_post.html.erb (Duration: 26.1ms | Allocations: 9109)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 10.1ms | Allocations: 3559)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 6.0ms | Allocations: 3547)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 5.9ms | Allocations: 3547)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 4.5ms | Allocations: 3547)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 5.4ms | Allocations: 3597)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 5.1ms | Allocations: 3713)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 4.1ms | Allocations: 4060)
+  Rendered posts/index.html.erb within layouts/application (Duration: 77.4ms | Allocations: 40281)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 1368)
+  Rendered shared/_toast.html.erb (Duration: 0.6ms | Allocations: 224)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 88.7ms | Allocations: 48599)
+Completed 200 OK in 104ms (Views: 86.7ms | ActiveRecord: 3.3ms | Allocations: 54129)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22854d98539790f6fc9743a48df7381467e72b25/IMG_3157.JPG" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22854d98539790f6fc9743a48df7381467e72b25", "filename"=>"IMG_3157"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: ryfhfoqcushb54krdfigjlsh2xdb (https://storage-s3-123.s3.amazonaws.com/ryfhfoqcushb54krdfigjlsh2xdb?response-content-disposition=inline%3B%20filename%3D%22IMG_3157.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3157.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=966981ed7ce81d2be9b4f41cf549c8d9364eba8cc57df20aa37067539ddb4472)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/ryfhfoqcushb54krdfigjlsh2xdb?response-content-disposition=inline%3B%20filename%3D%22IMG_3157.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3157.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=966981ed7ce81d2be9b4f41cf549c8d9364eba8cc57df20aa37067539ddb4472
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2091)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec9bc8072fe60a705f04eac85e5eaf4b59865a50/IMG_3155.JPG" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3d6e81310a219dda01960524ec6d80c5a4f829ec/IMG_3153.JPG" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3494ffe5f6f4ce8b9964f94583180f1fa3e6ef11/IMG_3154.JPG" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7856393f1d9bfbceb97ed2a9027f0b57c057aa11/IMG_3156.JPG" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0af29effdf2b6cdd26050324046f742cf018fe81/large%20green%20screen.png" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec9bc8072fe60a705f04eac85e5eaf4b59865a50", "filename"=>"IMG_3155"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: t2o7nr82datgxaw9ud7nnc4byegr (https://storage-s3-123.s3.amazonaws.com/t2o7nr82datgxaw9ud7nnc4byegr?response-content-disposition=inline%3B%20filename%3D%22IMG_3155.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3155.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2018054a3717ed37267af097bfbcaa852d87a01880cd7f82017cfef0ba53a285)[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+Redirected to https://storage-s3-123.s3.amazonaws.com/t2o7nr82datgxaw9ud7nnc4byegr?response-content-disposition=inline%3B%20filename%3D%22IMG_3155.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3155.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2018054a3717ed37267af097bfbcaa852d87a01880cd7f82017cfef0ba53a285
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3494ffe5f6f4ce8b9964f94583180f1fa3e6ef11", "filename"=>"IMG_3154"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3d6e81310a219dda01960524ec6d80c5a4f829ec", "filename"=>"IMG_3153"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0af29effdf2b6cdd26050324046f742cf018fe81", "filename"=>"large green screen"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7856393f1d9bfbceb97ed2a9027f0b57c057aa11", "filename"=>"IMG_3156"}
+Completed 302 Found in 9ms (ActiveRecord: 0.1ms | Allocations: 2803)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+[36m  S3 Storage (1.2ms) [0m[34mGenerated URL for file at key: ypbbpvfsefkhai2nwi9cpbjt0bgc (https://storage-s3-123.s3.amazonaws.com/ypbbpvfsefkhai2nwi9cpbjt0bgc?response-content-disposition=inline%3B%20filename%3D%22IMG_3154.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3154.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=80d59cb2b4e2bd8b60178dbc8f4db90fd648ed25ad751d9c01b9ca5c40d101f5)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: wk11ri7o1ged87acpn7r0a3fem41 (https://storage-s3-123.s3.amazonaws.com/wk11ri7o1ged87acpn7r0a3fem41?response-content-disposition=inline%3B%20filename%3D%22IMG_3153.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3153.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=09c62c922940d1fadf7f751aa76c01af5dde5f68ddfd8d7c01843b5f22468251)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Redirected to https://storage-s3-123.s3.amazonaws.com/ypbbpvfsefkhai2nwi9cpbjt0bgc?response-content-disposition=inline%3B%20filename%3D%22IMG_3154.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3154.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=80d59cb2b4e2bd8b60178dbc8f4db90fd648ed25ad751d9c01b9ca5c40d101f5
+Completed 302 Found in 21ms (ActiveRecord: 0.5ms | Allocations: 9173)
+
+
+Redirected to https://storage-s3-123.s3.amazonaws.com/wk11ri7o1ged87acpn7r0a3fem41?response-content-disposition=inline%3B%20filename%3D%22IMG_3153.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3153.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=09c62c922940d1fadf7f751aa76c01af5dde5f68ddfd8d7c01843b5f22468251
+Completed 302 Found in 21ms (ActiveRecord: 0.4ms | Allocations: 9114)
+
+
+[36m  S3 Storage (1.1ms) [0m[34mGenerated URL for file at key: rrilsy78jqjp5jagfeuwwhgty5ew (https://storage-s3-123.s3.amazonaws.com/rrilsy78jqjp5jagfeuwwhgty5ew?response-content-disposition=inline%3B%20filename%3D%22IMG_3156.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3156.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=22e582699b8d90964e9f7d0dba62259fe2998d58849a9962037a5d20311c1b35)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/rrilsy78jqjp5jagfeuwwhgty5ew?response-content-disposition=inline%3B%20filename%3D%22IMG_3156.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3156.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=22e582699b8d90964e9f7d0dba62259fe2998d58849a9962037a5d20311c1b35
+Completed 302 Found in 20ms (ActiveRecord: 0.5ms | Allocations: 8750)
+
+
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: x9vudwzb2i6sesw4tp2ead75b5bt (https://storage-s3-123.s3.amazonaws.com/x9vudwzb2i6sesw4tp2ead75b5bt?response-content-disposition=inline%3B%20filename%3D%22large%20green%20screen.png%22%3B%20filename%2A%3DUTF-8%27%27large%2520green%2520screen.png&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dd23f93b6248746253f1d5d480e6f592ebf63733eaf39bdc92cccd9f57c46681)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/x9vudwzb2i6sesw4tp2ead75b5bt?response-content-disposition=inline%3B%20filename%3D%22large%20green%20screen.png%22%3B%20filename%2A%3DUTF-8%27%27large%2520green%2520screen.png&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dd23f93b6248746253f1d5d480e6f592ebf63733eaf39bdc92cccd9f57c46681
+Completed 302 Found in 22ms (ActiveRecord: 0.4ms | Allocations: 9427)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--55f24d966467576f03efd887a5a1215f6877792b/IMG_2896.PNG" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7bff65c21e982c2f8568ceef5fadde2b087fa691/IMG_2424.WEBP" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--55f24d966467576f03efd887a5a1215f6877792b", "filename"=>"IMG_2896"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: jc5e87yfgjxyhu20ulztssmfum3k (https://storage-s3-123.s3.amazonaws.com/jc5e87yfgjxyhu20ulztssmfum3k?response-content-disposition=inline%3B%20filename%3D%22IMG_2896.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2896.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=16066881bb112c3d197b80aa78616bb05b9e65e14a27787aa153ad79a4d73b79)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/jc5e87yfgjxyhu20ulztssmfum3k?response-content-disposition=inline%3B%20filename%3D%22IMG_2896.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2896.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=16066881bb112c3d197b80aa78616bb05b9e65e14a27787aa153ad79a4d73b79
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c12498a4e993de2bbfcf64e5f7c0676441017889/IMG_2426.PNG" for 10.240.3.217 at 2023-11-26 22:54:10 +0000
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 2879)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7bff65c21e982c2f8568ceef5fadde2b087fa691", "filename"=>"IMG_2424"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+[36m  S3 Storage (1.6ms) [0m[34mGenerated URL for file at key: ir11cxdpr6m4eripiezxm3d9l8jr (https://storage-s3-123.s3.amazonaws.com/ir11cxdpr6m4eripiezxm3d9l8jr?response-content-disposition=attachment%3B%20filename%3D%22IMG_2424.WEBP%22%3B%20filename%2A%3DUTF-8%27%27IMG_2424.WEBP&response-content-type=image%2Fwebp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8fa0b565f6e88adb4a1860261e56430d647d032503178d407f8e28eb21387616)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/ir11cxdpr6m4eripiezxm3d9l8jr?response-content-disposition=attachment%3B%20filename%3D%22IMG_2424.WEBP%22%3B%20filename%2A%3DUTF-8%27%27IMG_2424.WEBP&response-content-type=image%2Fwebp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8fa0b565f6e88adb4a1860261e56430d647d032503178d407f8e28eb21387616
+Completed 302 Found in 9ms (ActiveRecord: 0.1ms | Allocations: 2679)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c12498a4e993de2bbfcf64e5f7c0676441017889", "filename"=>"IMG_2426"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: vhzeph1wmd3mgfp20byoxzi1xn75 (https://storage-s3-123.s3.amazonaws.com/vhzeph1wmd3mgfp20byoxzi1xn75?response-content-disposition=inline%3B%20filename%3D%22IMG_2426.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2426.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=46b92b0362dbfb836aac5816680050514ae3c07ab4d6bed1017fd5cd53c92539)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/vhzeph1wmd3mgfp20byoxzi1xn75?response-content-disposition=inline%3B%20filename%3D%22IMG_2426.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2426.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T225410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=46b92b0362dbfb836aac5816680050514ae3c07ab4d6bed1017fd5cd53c92539
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2090)
+
+
+Started GET "/posts/new" for 10.240.3.217 at 2023-11-26 22:54:11 +0000
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:16
+  Rendered posts/_form.html.erb (Duration: 11.0ms | Allocations: 2873)
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 3189)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 183)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 9508)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.1ms | Allocations: 9860)
+
+

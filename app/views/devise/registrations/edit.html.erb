@@ -1,6 +1,5 @@
 <% if @user.avatar.persisted? %>
-  <IMG src="<%= url_for(@user.avatar) %>" style="height:100px">
-
+  <%= image_tag(url_for(@user.avatar), style:"height:100px") %>
   <a href="data:application/xml;charset=utf-8,your code here" download="<%= @user.avatar.filename %>">Save</a>
   <% file = link_to @user.avatar.download %>
 <% else %>
