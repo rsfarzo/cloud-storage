@@ -10,6 +10,11 @@
       <% if post.image.persisted? %>
         <IMG src="<%= url_for(post.image) %>" style="height:100px">
       <% end %>
+      <% if !post.images.nil? 
+          post.images.each { |img| %>
+            <IMG src="<%= url_for(img) %>" style="height:100px">
+          <% } %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@ rails db:migrate
 - [AWS config](https://github.com/aws/aws-sdk-ruby#configuration)
 - [Ruby on rails doc](https://edgeguides.rubyonrails.org/active_storage_overview.html)
 - [Validations](https://github.com/igorkasyanchuk/active_storage_validations)
-
+- [Multi files](https://medium.com/@jedwardmook/uploading-multiple-files-using-rails-active-storage-and-react-219f07b5ac25)
 
 
 ## Template that includes devise, BS5
