@@ -17,6 +17,7 @@ rails db:migrate
 - [Carrierwave and Cloudinary](https://cloudinary.com/documentation/rails_carrierwave)
 - [Tutorial Cloudinary](https://training.cloudinary.com/courses/introduction-for-api-users-and-ruby-developers)
 - [Github cloudinary](https://github.com/cloudinary-training/cld-intro-ruby)
+- [Carrierwave gist](https://gist.github.com/Hinsei/346eebe1175e49296b13a5f1e28850a6)
 ```
 gem "dotenv-rails"
 ```
