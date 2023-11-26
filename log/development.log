@@ -13387,3 +13387,645 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 2.0ms | Allocations: 40735)
 
 
+Started GET "/" for 10.240.3.217 at 2023-11-26 22:00:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 283)
+  Rendered shared/_navbar.html.erb (Duration: 4.4ms | Allocations: 761)
+  Rendered shared/_toast.html.erb (Duration: 0.5ms | Allocations: 266)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.3ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 254.2ms | Allocations: 77623)
+Completed 200 OK in 531ms (Views: 258.0ms | ActiveRecord: 0.0ms | Allocations: 362831)
+
+
+Started GET "/users/sign_in" for 10.240.3.217 at 2023-11-26 22:00:45 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 583)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 9397)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 167)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 15744)
+Completed 200 OK in 49ms (Views: 31.2ms | ActiveRecord: 0.6ms | Allocations: 22832)
+
+
+Started POST "/users/sign_in" for 10.240.3.217 at 2023-11-26 22:00:47 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mo@email.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mo@email.net"], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 249ms (ActiveRecord: 0.8ms | Allocations: 7761)
+
+
+Started GET "/" for 10.240.3.217 at 2023-11-26 22:00:48 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 1078)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7440)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 7757)
+
+
+Started GET "/users/edit" for 10.240.3.217 at 2023-11-26 22:00:51 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 83.6ms | Allocations: 51157)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 206)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 90.9ms | Allocations: 57682)
+Completed 200 OK in 95ms (Views: 90.9ms | ActiveRecord: 1.3ms | Allocations: 60060)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f1ee243ded3c49914d74ee325c03dfabe17aa85d/large%20green%20screen.png" for 10.240.3.217 at 2023-11-26 22:00:51 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f1ee243ded3c49914d74ee325c03dfabe17aa85d", "filename"=>"large green screen"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+[36m  S3 Storage (122.3ms) [0m[34mGenerated URL for file at key: bobccm7gic3l1m2twfcddvr58zgj (https://storage-s3-123.s3.amazonaws.com/bobccm7gic3l1m2twfcddvr58zgj?response-content-disposition=inline%3B%20filename%3D%22large%20green%20screen.png%22%3B%20filename%2A%3DUTF-8%27%27large%2520green%2520screen.png&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T220051Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=389074ffb9577fdb9003641408a17a381728f7e0c7ff584d97027f4b4f26b02e)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/bobccm7gic3l1m2twfcddvr58zgj?response-content-disposition=inline%3B%20filename%3D%22large%20green%20screen.png%22%3B%20filename%2A%3DUTF-8%27%27large%2520green%2520screen.png&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T220051Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=389074ffb9577fdb9003641408a17a381728f7e0c7ff584d97027f4b4f26b02e
+Completed 302 Found in 126ms (ActiveRecord: 0.1ms | Allocations: 118905)
+
+
+Started PUT "/users" for 10.240.3.217 at 2023-11-26 22:01:16 +0000
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mo@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f69c0524438 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-9464-q4e7hb.PNG>, @content_type="image/png", @original_filename="IMG_2457.PNG", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"IMG_2457.PNG\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 19]]
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "9zdqzq20wd5atc5h4s83hjg85b94"], ["filename", "IMG_2457.PNG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 67802], ["checksum", "Iuv6j1sPvxyvOSztdqpIjA=="], ["created_at", "2023-11-26 22:01:16.794519"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 4], ["blob_id", 21], ["created_at", "2023-11-26 22:01:16.797721"]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-26 22:01:16.799027"], ["id", 4]]
+  [1m[36mTRANSACTION (27.5ms)[0m  [1m[36mcommit transaction[0m
+[36m  S3 Storage (131.0ms) [0m[32mUploaded file to key: 9zdqzq20wd5atc5h4s83hjg85b94 (checksum: Iuv6j1sPvxyvOSztdqpIjA==)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: b0bd036f-addb-4e11-b33f-85d52cfc8dce) to Async(default) with arguments: #<GlobalID:0x00007f6992e8fe38 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/19>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9e8b1083-727f-4566-897a-1f45520d3c99) to Async(default) with arguments: #<GlobalID:0x00007f6992e8af00 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/21>>
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 461ms (ActiveRecord: 30.0ms | Allocations: 31952)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e8b1083-727f-4566-897a-1f45520d3c99]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e8b1083-727f-4566-897a-1f45520d3c99] Performing ActiveStorage::AnalyzeJob (Job ID: 9e8b1083-727f-4566-897a-1f45520d3c99) from Async(default) enqueued at 2023-11-26T22:01:16Z with arguments: #<GlobalID:0x00007f6992c42090 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/21>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e8b1083-727f-4566-897a-1f45520d3c99] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e8b1083-727f-4566-897a-1f45520d3c99]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e8b1083-727f-4566-897a-1f45520d3c99]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 21]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e8b1083-727f-4566-897a-1f45520d3c99]   [1m[36mTRANSACTION (34.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9e8b1083-727f-4566-897a-1f45520d3c99] Performed ActiveStorage::AnalyzeJob (Job ID: 9e8b1083-727f-4566-897a-1f45520d3c99) from Async(default) in 90.05ms
+Started GET "/" for 10.240.3.217 at 2023-11-26 22:01:17 +0000
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce] Performing ActiveStorage::PurgeJob (Job ID: b0bd036f-addb-4e11-b33f-85d52cfc8dce) from Async(default) enqueued at 2023-11-26T22:01:16Z with arguments: #<GlobalID:0x00007f69929e7070 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/19>>
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 19], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 19]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce]   [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce]   [1m[36mActiveStorage::Blob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 19]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce]   [1m[36mTRANSACTION (27.1ms)[0m  [1m[36mcommit transaction[0m
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 1146)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 7615)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 7887)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce] [36m  S3 Storage (17.6ms) [0m[31mDeleted file from key: bobccm7gic3l1m2twfcddvr58zgj[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce] [36m  S3 Storage (15.0ms) [0m[31mDeleted files by key prefix: variants/bobccm7gic3l1m2twfcddvr58zgj/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b0bd036f-addb-4e11-b33f-85d52cfc8dce] Performed ActiveStorage::PurgeJob (Job ID: b0bd036f-addb-4e11-b33f-85d52cfc8dce) from Async(default) in 92.8ms
+Started GET "/users/edit" for 10.240.3.217 at 2023-11-26 22:01:20 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 15.0ms | Allocations: 7864)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 183)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 14285)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.2ms | Allocations: 15983)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31/IMG_2457.PNG" for 10.240.3.217 at 2023-11-26 22:01:20 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31", "filename"=>"IMG_2457"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[36m  S3 Storage (5.8ms) [0m[34mGenerated URL for file at key: 9zdqzq20wd5atc5h4s83hjg85b94 (https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T220120Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2adec439e26f29f542c912329323355fb212e4ab6c6b97af085c0ef97fb7a6b9)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T220120Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2adec439e26f29f542c912329323355fb212e4ab6c6b97af085c0ef97fb7a6b9
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 2094)
+
+
+Started GET "/users/edit" for 10.240.1.100 at 2023-11-26 22:03:10 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (77.6ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 87.8ms | Allocations: 10774)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 98.3ms | Allocations: 20232)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.3ms | Allocations: 22980)
+
+
+
+Encoding::CompatibilityError - incompatible character encodings: UTF-8 and ASCII-8BIT:
+  app/views/layouts/application.html.erb:17
+
+Started POST "/__better_errors/0c8275fb09ceb66c/variables" for 10.240.1.100 at 2023-11-26 22:03:10 +0000
+Started POST "/__better_errors/0c8275fb09ceb66c/eval" for 10.240.1.100 at 2023-11-26 22:03:35 +0000
+[36m  S3 Storage (48.8ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+Started GET "/users/edit" for 10.240.3.217 at 2023-11-26 22:11:14 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (47.7ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 56.0ms | Allocations: 10194)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 17649)
+Completed 200 OK in 70ms (Views: 67.1ms | ActiveRecord: 0.6ms | Allocations: 20559)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31/IMG_2457.PNG" for 10.240.3.217 at 2023-11-26 22:11:14 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31", "filename"=>"IMG_2457"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: 9zdqzq20wd5atc5h4s83hjg85b94 (https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T221114Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=10b513a3d87896f62d60e46f30e178bdeaadd1883ae91fddba95c562fca5e2e8)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T221114Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=10b513a3d87896f62d60e46f30e178bdeaadd1883ae91fddba95c562fca5e2e8
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2090)
+
+
+Started GET "/users/edit" for 10.240.3.217 at 2023-11-26 22:13:30 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (82.5ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 92.0ms | Allocations: 10284)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 106.0ms | Allocations: 17740)
+Completed 200 OK in 111ms (Views: 107.9ms | ActiveRecord: 0.2ms | Allocations: 20490)
+
+
+Started GET "/users/edit" for 10.240.0.113 at 2023-11-26 22:15:49 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (62.2ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 70.5ms | Allocations: 10322)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.5ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 17874)
+Completed 200 OK in 86ms (Views: 83.7ms | ActiveRecord: 0.2ms | Allocations: 20635)
+
+
+Started GET "/users/edit" for 10.240.0.113 at 2023-11-26 22:16:59 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (46.3ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 54.4ms | Allocations: 10311)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.3ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 63.6ms | Allocations: 17766)
+Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 0.2ms | Allocations: 20532)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31/IMG_2457.PNG" for 10.240.0.113 at 2023-11-26 22:16:59 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31", "filename"=>"IMG_2457"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: 9zdqzq20wd5atc5h4s83hjg85b94 (https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T221659Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=27a58f386af3e2ee6a506e017e35675a0eab38340acaa03dfff611dc1d75a541)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T221659Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=27a58f386af3e2ee6a506e017e35675a0eab38340acaa03dfff611dc1d75a541
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2090)
+
+
+Started GET "/rails/db" for 10.240.0.113 at 2023-11-26 22:17:56 +0000
+Processing by RailsDb::DashboardController#index as HTML
+  Rendering layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application (Duration: 1.5ms | Allocations: 914)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_header.html.erb (Duration: 2.9ms | Allocations: 2097)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_sidebar.html.erb (Duration: 1.1ms | Allocations: 768)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_gems.html.erb (Duration: 0.6ms | Allocations: 566)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_footer.html.erb (Duration: 1.9ms | Allocations: 1754)
+  Rendered layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb (Duration: 16.2ms | Allocations: 14017)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.1ms | Allocations: 15179)
+
+
+Started GET "/rails/db/tables/active_storage_blobs/data" for 10.240.0.113 at 2023-11-26 22:18:00 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_blobs"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_blobs"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.3ms | Allocations: 181)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 15.1ms | Allocations: 11533)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 10.4ms | Allocations: 9459)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.5ms | Allocations: 1348)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.6ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.7ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.0ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.2ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.2ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 81.8ms | Allocations: 62455)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 84.7ms | Allocations: 67661)
+Completed 200 OK in 90ms (Views: 75.0ms | ActiveRecord: 11.0ms | Allocations: 71330)
+
+
+Started GET "/users/edit" for 10.240.0.113 at 2023-11-26 22:18:53 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (90.4ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 98.9ms | Allocations: 10366)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 108.4ms | Allocations: 17918)
+Completed 200 OK in 113ms (Views: 110.3ms | ActiveRecord: 0.3ms | Allocations: 20692)
+
+
+Started GET "/users/edit" for 10.240.0.113 at 2023-11-26 22:19:30 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (55.2ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 63.8ms | Allocations: 10357)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 72.7ms | Allocations: 17812)
+Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 0.3ms | Allocations: 20561)
+
+
+Started GET "/users/edit" for 10.240.0.69 at 2023-11-26 22:23:06 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (64.2ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 71.9ms | Allocations: 10162)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 557)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 81.0ms | Allocations: 17618)
+Completed 200 OK in 85ms (Views: 82.7ms | ActiveRecord: 0.2ms | Allocations: 20386)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31/IMG_2457.PNG" for 10.240.0.69 at 2023-11-26 22:23:06 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31", "filename"=>"IMG_2457"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: 9zdqzq20wd5atc5h4s83hjg85b94 (https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T222306Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=073629aca35f633fd856daab30e9b2239fa8a23cbbc02fd5bcfe7a3c5b5d766d)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T222306Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=073629aca35f633fd856daab30e9b2239fa8a23cbbc02fd5bcfe7a3c5b5d766d
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2089)
+
+
+Started GET "/users/edit" for 10.240.0.10 at 2023-11-26 22:34:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (102.0ms) [0m[34mDownloaded file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 151.4ms | Allocations: 170995)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 596)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 264)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 254.5ms | Allocations: 247120)
+Completed 200 OK in 418ms (Views: 402.4ms | ActiveRecord: 1.4ms | Allocations: 542201)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31/IMG_2457.PNG" for 10.240.0.10 at 2023-11-26 22:34:23 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4773968442a531baadb2fb9e8d4bfe4486040c31", "filename"=>"IMG_2457"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[36m  S3 Storage (1.7ms) [0m[34mGenerated URL for file at key: 9zdqzq20wd5atc5h4s83hjg85b94 (https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T223423Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3ab99ec07ed4ca5c198018f739313e4cf489c6e03fc8359199c3c2a67931542e)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/9zdqzq20wd5atc5h4s83hjg85b94?response-content-disposition=inline%3B%20filename%3D%22IMG_2457.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2457.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T223423Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3ab99ec07ed4ca5c198018f739313e4cf489c6e03fc8359199c3c2a67931542e
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 4042)
+
+
+Started PUT "/users" for 10.240.0.10 at 2023-11-26 22:34:34 +0000
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mo@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f83c5f214a8 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-23493-4rcfks.png>, @content_type="image/png", @original_filename="large green screen.png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"large green screen.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 21]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "mt65ut1j5mn452grzawv6z8odwvy"], ["filename", "large green screen.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 38863], ["checksum", "oOysdC7cSJb/6MZP5omhYw=="], ["created_at", "2023-11-26 22:34:34.858783"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 4], ["blob_id", 22], ["created_at", "2023-11-26 22:34:34.862804"]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-26 22:34:34.864158"], ["id", 4]]
+  [1m[36mTRANSACTION (28.9ms)[0m  [1m[36mcommit transaction[0m
+[36m  S3 Storage (172.0ms) [0m[32mUploaded file to key: mt65ut1j5mn452grzawv6z8odwvy (checksum: oOysdC7cSJb/6MZP5omhYw==)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 73fc6247-7f91-42de-bb22-9cad1b8b381a) to Async(default) with arguments: #<GlobalID:0x00007f83c5c8c418 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/21>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 327197eb-577c-474b-86cc-d00ee5b12b6d) to Async(default) with arguments: #<GlobalID:0x00007f83c5c88250 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/22>>
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 486ms (ActiveRecord: 30.6ms | Allocations: 32790)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a] Performing ActiveStorage::PurgeJob (Job ID: 73fc6247-7f91-42de-bb22-9cad1b8b381a) from Async(default) enqueued at 2023-11-26T22:34:35Z with arguments: #<GlobalID:0x00007f83f5b8da28 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/21>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d] Performing ActiveStorage::AnalyzeJob (Job ID: 327197eb-577c-474b-86cc-d00ee5b12b6d) from Async(default) enqueued at 2023-11-26T22:34:35Z with arguments: #<GlobalID:0x00007f83f5b951b0 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/22>>
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 22]]
+Started GET "/" for 10.240.0.10 at 2023-11-26 22:34:40 +0000
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d]   [1m[36mTRANSACTION (5010.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [327197eb-577c-474b-86cc-d00ee5b12b6d] Error performing ActiveStorage::AnalyzeJob (Job ID: 327197eb-577c-474b-86cc-d00ee5b12b6d) from Async(default) in 5036.17ms: ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked):
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/resultset.rb:162:in `step'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/resultset.rb:162:in `next_hash'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/resultset.rb:97:in `next'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/resultset.rb:125:in `each'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/database.rb:203:in `to_a'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/database.rb:203:in `block in execute'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/database.rb:154:in `prepare'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/database.rb:194:in `execute'
+/usr/local/rvm/gems/ruby-3.2.2/gems/sqlite3-1.6.6-x86_64-linux/lib/sqlite3/database.rb:645:in `commit'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/sqlite3/database_statements.rb:93:in `block in commit_db_transaction'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract_adapter.rb:752:in `block in log'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract_adapter.rb:743:in `log'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/sqlite3/database_statements.rb:93:in `commit_db_transaction'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/transaction.rb:219:in `commit'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/transaction.rb:303:in `block in commit_transaction'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/transaction.rb:294:in `commit_transaction'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/transaction.rb:345:in `block in within_new_transaction'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activerecord-7.0.8/lib/active_record/persistence.rb:780:in `update!'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activestorage-7.0.8/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activestorage-7.0.8/app/jobs/active_storage/analyze_job.rb:11:in `perform'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/execution.rb:65:in `block in _perform_job'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/usr/local/rvm/gems/ruby-3.2.2/gems/i18n-1.14.1/lib/i18n.rb:322:in `with_locale'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `instance_exec'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `instance_exec'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/execution.rb:64:in `_perform_job'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/execution.rb:52:in `perform_now'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/notifications.rb:206:in `block in instrument'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/notifications.rb:206:in `instrument'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/instrumentation.rb:35:in `instrument'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/instrumentation.rb:14:in `perform_now'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/logging.rb:18:in `block in perform_now'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/tagged_logging.rb:37:in `tagged'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/tagged_logging.rb:99:in `tagged'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/logging.rb:25:in `tag_logger'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/logging.rb:18:in `perform_now'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/execution.rb:30:in `block in execute'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/reloader.rb:72:in `block in wrap'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/reloader.rb:71:in `wrap'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `instance_exec'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/execution.rb:28:in `execute'
+/usr/local/rvm/gems/ruby-3.2.2/gems/activejob-7.0.8/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/usr/local/rvm/gems/ruby-3.2.2/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+/usr/local/rvm/gems/ruby-3.2.2/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+/usr/local/rvm/gems/ruby-3.2.2/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+/usr/local/rvm/gems/ruby-3.2.2/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+/usr/local/rvm/gems/ruby-3.2.2/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+/usr/local/rvm/gems/ruby-3.2.2/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 21]]
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a]   [1m[36mActiveStorage::Blob Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 21]]
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a]   [1m[36mTRANSACTION (27.6ms)[0m  [1m[36mcommit transaction[0m
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 100)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 1080)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 7780)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.2ms | Allocations: 8592)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a] [36m  S3 Storage (58.5ms) [0m[31mDeleted file from key: 9zdqzq20wd5atc5h4s83hjg85b94[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a] [36m  S3 Storage (16.3ms) [0m[31mDeleted files by key prefix: variants/9zdqzq20wd5atc5h4s83hjg85b94/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [73fc6247-7f91-42de-bb22-9cad1b8b381a] Performed ActiveStorage::PurgeJob (Job ID: 73fc6247-7f91-42de-bb22-9cad1b8b381a) from Async(default) in 5171.65ms
+Started GET "/users/edit" for 10.240.0.10 at 2023-11-26 22:34:43 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (22.3ms) [0m[34mDownloaded file from key: mt65ut1j5mn452grzawv6z8odwvy[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 29.8ms | Allocations: 9427)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 183)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 15712)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.2ms | Allocations: 17409)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8d2628ff87b406b15e246469e21c346683c579e6/large%20green%20screen.png" for 10.240.0.10 at 2023-11-26 22:34:43 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8d2628ff87b406b15e246469e21c346683c579e6", "filename"=>"large green screen"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: mt65ut1j5mn452grzawv6z8odwvy (https://storage-s3-123.s3.amazonaws.com/mt65ut1j5mn452grzawv6z8odwvy?response-content-disposition=inline%3B%20filename%3D%22large%20green%20screen.png%22%3B%20filename%2A%3DUTF-8%27%27large%2520green%2520screen.png&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T223443Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=78094db35c4881d5d546814d689dcf55955c9c658c1f620a911c96c50def179a)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/mt65ut1j5mn452grzawv6z8odwvy?response-content-disposition=inline%3B%20filename%3D%22large%20green%20screen.png%22%3B%20filename%2A%3DUTF-8%27%27large%2520green%2520screen.png&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T223443Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=78094db35c4881d5d546814d689dcf55955c9c658c1f620a911c96c50def179a
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2110)
+
+
+Started PUT "/users" for 10.240.4.209 at 2023-11-26 22:36:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mo@email.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f2c274f3a30 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-24263-f5qnbr.PNG>, @content_type="image/png", @original_filename="IMG_2765.PNG", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"IMG_2765.PNG\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (1.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 22]]
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "outft6q67ehphngfayt2e1ik0qv9"], ["filename", "IMG_2765.PNG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 270478], ["checksum", "ZjFJ6hp+JrbPBw3aR9cdOQ=="], ["created_at", "2023-11-26 22:36:14.396964"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 4], ["blob_id", 23], ["created_at", "2023-11-26 22:36:14.402284"]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-26 22:36:14.405648"], ["id", 4]]
+  [1m[36mTRANSACTION (27.8ms)[0m  [1m[36mcommit transaction[0m
+[36m  S3 Storage (198.4ms) [0m[32mUploaded file to key: outft6q67ehphngfayt2e1ik0qv9 (checksum: ZjFJ6hp+JrbPBw3aR9cdOQ==)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: b9e05f2a-8b48-411d-aeea-bb2e770e55f5) to Async(default) with arguments: #<GlobalID:0x00007f2c26fd8dc0 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/22>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 720db377-4559-4664-abfa-d07714790c8e) to Async(default) with arguments: #<GlobalID:0x00007f2c26fd3140 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/23>>
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 719ms (ActiveRecord: 32.7ms | Allocations: 482619)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5] Performing ActiveStorage::PurgeJob (Job ID: b9e05f2a-8b48-411d-aeea-bb2e770e55f5) from Async(default) enqueued at 2023-11-26T22:36:14Z with arguments: #<GlobalID:0x00007f2c44fb69f0 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/22>>
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5]   [1m[36mActiveStorage::Attachment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 22]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5]   [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 22], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5]   [1m[36mActiveStorage::Blob Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 22]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5]   [1m[36mTRANSACTION (30.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 10.240.4.209 at 2023-11-26 22:36:14 +0000
+[ActiveJob] [ActiveStorage::AnalyzeJob] [720db377-4559-4664-abfa-d07714790c8e]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5] [36m  S3 Storage (21.5ms) [0m[31mDeleted file from key: mt65ut1j5mn452grzawv6z8odwvy[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [720db377-4559-4664-abfa-d07714790c8e] Performing ActiveStorage::AnalyzeJob (Job ID: 720db377-4559-4664-abfa-d07714790c8e) from Async(default) enqueued at 2023-11-26T22:36:14Z with arguments: #<GlobalID:0x00007f2c44effbd8 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/23>>
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5] [36m  S3 Storage (13.4ms) [0m[31mDeleted files by key prefix: variants/mt65ut1j5mn452grzawv6z8odwvy/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [b9e05f2a-8b48-411d-aeea-bb2e770e55f5] Performed ActiveStorage::PurgeJob (Job ID: b9e05f2a-8b48-411d-aeea-bb2e770e55f5) from Async(default) in 87.13ms
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1276)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [720db377-4559-4664-abfa-d07714790c8e] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [720db377-4559-4664-abfa-d07714790c8e]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [720db377-4559-4664-abfa-d07714790c8e]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 23]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [720db377-4559-4664-abfa-d07714790c8e]   [1m[36mTRANSACTION (31.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [720db377-4559-4664-abfa-d07714790c8e] Performed ActiveStorage::AnalyzeJob (Job ID: 720db377-4559-4664-abfa-d07714790c8e) from Async(default) in 99.37ms
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 1479)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 257)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.4ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 336.3ms | Allocations: 86346)
+Completed 200 OK in 364ms (Views: 343.0ms | ActiveRecord: 0.2ms | Allocations: 96475)
+
+
+Started GET "/users/edit" for 10.240.4.209 at 2023-11-26 22:36:18 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/devise/registrations/edit.html.erb:2
+[36m  S3 Storage (39.7ms) [0m[34mDownloaded file from key: outft6q67ehphngfayt2e1ik0qv9[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 57.6ms | Allocations: 12913)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 205)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 69.2ms | Allocations: 19301)
+Completed 200 OK in 73ms (Views: 70.5ms | ActiveRecord: 0.3ms | Allocations: 21647)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17590168eba0774d216216273a8247de4ab8d5b6/IMG_2765.PNG" for 10.240.4.209 at 2023-11-26 22:36:18 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17590168eba0774d216216273a8247de4ab8d5b6", "filename"=>"IMG_2765"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[36m  S3 Storage (1.2ms) [0m[34mGenerated URL for file at key: outft6q67ehphngfayt2e1ik0qv9 (https://storage-s3-123.s3.amazonaws.com/outft6q67ehphngfayt2e1ik0qv9?response-content-disposition=inline%3B%20filename%3D%22IMG_2765.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2765.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T223618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=090e98d71e35bf6a1a90aec11a9f23a187d5215442bb88441cdf30af47bce278)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/outft6q67ehphngfayt2e1ik0qv9?response-content-disposition=inline%3B%20filename%3D%22IMG_2765.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2765.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T223618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=090e98d71e35bf6a1a90aec11a9f23a187d5215442bb88441cdf30af47bce278
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 3924)
+
+

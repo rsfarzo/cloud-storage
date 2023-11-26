@@ -5,10 +5,40 @@
   - no migrations necessary
 - Uses Cloudinary & Carrierwave for `Post.avatar`
 
+Gems:
+```
+gem "dotenv-rails", groups: [:development, :test]
+gem "aws-sdk-s3"
+gem "carrierwave", '~> 3.0'
+gem "cloudinary"
+```
+Terminal:
 ```
 rails active_storage:install
 rails db:migrate
 ```
+## AWS S3
+- using .env, so add to .gitignore
+```
+S3_BUCKET=bbbbbbbbbbb
+AWS_SECRET_KEY=oO+B16ZzfEi
+AWS_ACCESS_KEY_ID=AAAAAAAAAAAAAA
+AWS_REGION=us-9
+AWS_SDK_CONFIG_OPT_OUT=true
+cloudinary_cloud=00000000000
+cloudinary_key=00000000000000000
+cloudinary_secret=00000000000000000000000
+CLOUDINARY_URL=cloudinary://5544487:3333333333333333333333
+```
+- In user model: `has_one_attached :avatar`
+- In application_controller.rb configure_permitted_parameters to permit: ` :avatar`
+- In new.html.erb: 
+```
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+```
+
+
 - [Overview](https://edgeguides.rubyonrails.org/active_storage_overview.html)
 - [Avatar example honeybadger](https://www.honeybadger.io/blog/rails-app-aws-s3/)
 - [AWS config](https://github.com/aws/aws-sdk-ruby#configuration)
@@ -30,13 +60,9 @@ rails generate uploader Avatar
 rails generate migration add_avatar_to_posts avatar:string
 rails db:migrate
 ```
-Mount the uploader to the user model:
+Mount the uploader to the posts model:
 ```
 mount_uploader :imagelib, AvatarUploader
-```
-
-```
-gem "dotenv-rails"
 ```
 
 ## Template that includes devise, BS5
@@ -96,7 +122,6 @@ Depending on your application's configuration some manual setup may be required:
 ```
        rails g devise:views
 ```       
-     * Not required *
 
 
 
