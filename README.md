@@ -23,13 +23,13 @@ rails db:migrate
 - [Carrierwave gist](https://gist.github.com/Hinsei/346eebe1175e49296b13a5f1e28850a6)
 
 ```
-rails generate uploader ImageLib
-rails generate migration add_imagelib_to_users carrier_img:string
+rails generate uploader Avatar
+rails generate migration add_avatar_to_posts avatar:string
 rails db:migrate
 ```
 Mount the uploader to the user model:
 ```
-mount_uploader :imagelib, ImageLibUploader
+mount_uploader :imagelib, AvatarUploader
 ```
 
 ```

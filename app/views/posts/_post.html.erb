@@ -15,6 +15,10 @@
             <IMG src="<%= url_for(img) %>" style="height:100px">
           <% } %>
       <% end %>
+      debugger
+      <% if post.avatar.staged %>
+          <IMG src="<%= url_for(post.avatar) %>" style="height:100px">
+      <% end %>
     </div>
   </div>
 </div>

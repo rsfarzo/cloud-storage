@@ -481,7 +481,7 @@ DEPENDENCIES
   bootsnap
   bootstrap
   capybara
-  carrierwave
+  carrierwave (~> 3.0)
   cloudinary
   debug
   devise

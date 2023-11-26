@@ -3,6 +3,7 @@
 # Table name: posts
 #
 #  id         :integer          not null, primary key
+#  avatar     :string
 #  text       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -12,4 +13,5 @@ class Post < ApplicationRecord
 
     has_one_attached :image
     has_many_attached :images
+    mount_uploader :avatar, AvatarUploader
 end
