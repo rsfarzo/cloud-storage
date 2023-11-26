@@ -1,12 +1,15 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
-
-  <p>
-    <strong>Text:</strong>
-    <%= post.text %>
-  </p>
-
+<div class="card text-center" style="width:200px">
+  <div class="card-header">
+    <strong><%= User.find(post.user_id).email %></strong>
+    <blockquote class="blockquote mb-0">
+      <%= post.text %>
+    </blockquote>
+  </div>
+  <div class="card-body">
+    <div id="<%= dom_id post %>">
+      <% if post.image.persisted? %>
+        <IMG src="<%= url_for(post.image) %>" style="height:100px">
+      <% end %>
+    </div>
+  </div>
 </div>
