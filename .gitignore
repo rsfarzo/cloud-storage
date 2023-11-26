@@ -13,4 +13,4 @@ tmp/cache/*
 tmp/pids/server.pid
 log/development.log
 *.cache
-log/development.log
+
