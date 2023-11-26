@@ -21,6 +21,17 @@ rails db:migrate
 - [Tutorial Cloudinary](https://training.cloudinary.com/courses/introduction-for-api-users-and-ruby-developers)
 - [Github cloudinary](https://github.com/cloudinary-training/cld-intro-ruby)
 - [Carrierwave gist](https://gist.github.com/Hinsei/346eebe1175e49296b13a5f1e28850a6)
+
+```
+rails generate uploader ImageLib
+rails generate migration add_imagelib_to_users carrier_img:string
+rails db:migrate
+```
+Mount the uploader to the user model:
+```
+mount_uploader :imagelib, ImageLibUploader
+```
+
 ```
 gem "dotenv-rails"
 ```
