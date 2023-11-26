@@ -8293,3 +8293,52 @@ Processing by HomeController#index as TURBO_STREAM
 Completed 200 OK in 8ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 6699)
 
 
+Started GET "/" for 10.240.3.196 at 2023-11-26 05:28:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 283)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 763)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 266)
+  Rendered layout layouts/application.html.erb (Duration: 129.8ms | Allocations: 77100)
+Completed 500 Internal Server Error in 283ms (ActiveRecord: 0.0ms | Allocations: 362188)
+
+
+
+ActionView::MissingTemplate - Missing partial shared/_file_mgr with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/workspaces/cloud-storage/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/turbo-rails-1.4.0/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actiontext-7.0.8/app/views"
+  * "/usr/local/rvm/gems/ruby-3.2.2/gems/actionmailbox-7.0.8/app/views":
+  app/views/layouts/application.html.erb:18
+
+Started POST "/__better_errors/3228a80877b33f45/variables" for 10.240.3.196 at 2023-11-26 05:28:19 +0000
+Started GET "/" for 10.240.3.196 at 2023-11-26 05:30:43 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 96)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 562)
+  Rendered shared/_toast.html.erb (Duration: 0.6ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 40.2ms | Allocations: 32038)
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | Allocations: 39601)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms | Allocations: 40717)
+
+
+Started GET "/" for 10.240.3.196 at 2023-11-26 05:31:55 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 100)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 562)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 7815)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 8881)
+
+

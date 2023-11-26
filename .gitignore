@@ -1,6 +1,6 @@
 *.log
 log/*
-log/development.log
+
 
 temp/cache
 tmp/cache
@@ -10,3 +10,5 @@ tmp/cache/*
 *.env
 /.env
 
+tmp/pids/server.pid
+log/development.log
