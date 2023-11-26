@@ -13054,3 +13054,336 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 2.0ms | Allocations: 40608)
 
 
+Started GET "/rails/db/tables/active_storage_blobs/data" for 10.240.3.196 at 2023-11-26 20:49:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RailsDb::TablesController#data as HTML
+  Parameters: {"table_id"=>"active_storage_blobs"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_blobs"[0m
+  Rendering layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.3ms | Allocations: 188)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 9.4ms | Allocations: 11961)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 6.5ms | Allocations: 9496)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.1ms | Allocations: 1448)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.2ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.7ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1039)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.1ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 76.1ms | Allocations: 65849)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.html.erb within layouts/rails_db/application (Duration: 77.0ms | Allocations: 66305)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_header.html.erb (Duration: 2.5ms | Allocations: 2026)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_sidebar.html.erb (Duration: 1.0ms | Allocations: 737)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_gems.html.erb (Duration: 0.6ms | Allocations: 566)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_footer.html.erb (Duration: 1.8ms | Allocations: 1756)
+  Rendered layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb (Duration: 173.0ms | Allocations: 127837)
+Completed 200 OK in 329ms (Views: 165.4ms | ActiveRecord: 10.3ms | Allocations: 417086)
+
+
+Started GET "/rails/db/tables/active_storage_blobs/data?per_page=15" for 10.240.3.196 at 2023-11-26 20:49:31 +0000
+Processing by RailsDb::TablesController#data as HTML
+  Parameters: {"per_page"=>"15", "table_id"=>"active_storage_blobs"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_blobs"[0m
+  Rendering layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 9.4ms | Allocations: 9649)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 23.7ms | Allocations: 9493)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.1ms | Allocations: 1044)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.8ms | Allocations: 1042)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.9ms | Allocations: 1042)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.0ms | Allocations: 1042)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.8ms | Allocations: 1042)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.9ms | Allocations: 1042)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.1ms | Allocations: 1042)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.6ms | Allocations: 1043)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.3ms | Allocations: 1043)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.9ms | Allocations: 1042)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.6ms | Allocations: 1043)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 90.5ms | Allocations: 55886)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.html.erb within layouts/rails_db/application (Duration: 90.9ms | Allocations: 55944)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_header.html.erb (Duration: 2.0ms | Allocations: 1140)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_sidebar.html.erb (Duration: 0.9ms | Allocations: 478)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_gems.html.erb (Duration: 0.3ms | Allocations: 248)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_footer.html.erb (Duration: 1.2ms | Allocations: 778)
+  Rendered layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb (Duration: 107.6ms | Allocations: 66079)
+Completed 200 OK in 112ms (Views: 96.8ms | ActiveRecord: 11.7ms | Allocations: 68600)
+
+
+Started GET "/posts/8" for 10.240.3.196 at 2023-11-26 20:49:56 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 37.1ms | Allocations: 17253)
+  Rendered posts/show.html.erb within layouts/application (Duration: 40.9ms | Allocations: 18488)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | Allocations: 1545)
+  Rendered shared/_toast.html.erb (Duration: 0.5ms | Allocations: 235)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.3ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 167.8ms | Allocations: 47557)
+Completed 200 OK in 188ms (Views: 168.1ms | ActiveRecord: 1.5ms | Allocations: 60812)
+
+
+Started GET "/posts/8/edit" for 10.240.3.196 at 2023-11-26 20:49:57 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:16
+  Rendered posts/_form.html.erb (Duration: 5.5ms | Allocations: 3161)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3542)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 183)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 9831)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.1ms | Allocations: 10670)
+
+
+Started PATCH "/posts/8" for 10.240.3.196 at 2023-11-26 20:50:28 +0000
+Processing by PostsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"user_id"=>"4", "text"=>"cc", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f527448b868 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-77775-2y2v0w.PNG>, @content_type="image/png", @original_filename="IMG_2896.PNG", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"IMG_2896.PNG\"\r\nContent-Type: image/png\r\n">, "images"=>[""], "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f527448b818 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-77775-mmaywa.WEBP>, @content_type="image/webp", @original_filename="IMG_2424.WEBP", @headers="Content-Disposition: form-data; name=\"post[avatar]\"; filename=\"IMG_2424.WEBP\"\r\nContent-Type: image/webp\r\n">}, "commit"=>"Update Post", "id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ?, "avatar" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2023-11-26 20:50:28.180902"], ["avatar", "nd37kojocxb2i2ywi8gy.webp"], ["id", 8]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "jc5e87yfgjxyhu20ulztssmfum3k"], ["filename", "IMG_2896.PNG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 162764], ["checksum", "grY5PMpSGwIzbFCHkXRSqw=="], ["created_at", "2023-11-26 20:50:28.194614"]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "image"], ["record_type", "Post"], ["record_id", 8], ["blob_id", 20], ["created_at", "2023-11-26 20:50:28.196298"]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "avatar" = ? WHERE "posts"."id" = ?[0m  [["avatar", "image/upload/v1701031828/nd37kojocxb2i2ywi8gy.webp"], ["id", 8]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2023-11-26 20:50:28.197619"], ["id", 8]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (32.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+[36m  S3 Storage (137.5ms) [0m[32mUploaded file to key: jc5e87yfgjxyhu20ulztssmfum3k (checksum: grY5PMpSGwIzbFCHkXRSqw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 36808869-20d1-4fcf-80fd-f7b5355119fb) to Async(default) with arguments: #<GlobalID:0x00007f526c4701b0 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/20>>
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/posts/8
+Completed 302 Found in 886ms (ActiveRecord: 34.0ms | Allocations: 303628)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [36808869-20d1-4fcf-80fd-f7b5355119fb]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [36808869-20d1-4fcf-80fd-f7b5355119fb] Performing ActiveStorage::AnalyzeJob (Job ID: 36808869-20d1-4fcf-80fd-f7b5355119fb) from Async(default) enqueued at 2023-11-26T20:50:29Z with arguments: #<GlobalID:0x00007f526c216c20 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/20>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [36808869-20d1-4fcf-80fd-f7b5355119fb] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [36808869-20d1-4fcf-80fd-f7b5355119fb]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [36808869-20d1-4fcf-80fd-f7b5355119fb]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 20]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [36808869-20d1-4fcf-80fd-f7b5355119fb]   [1m[36mTRANSACTION (31.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [36808869-20d1-4fcf-80fd-f7b5355119fb] Performed ActiveStorage::AnalyzeJob (Job ID: 36808869-20d1-4fcf-80fd-f7b5355119fb) from Async(default) in 44.72ms
+Started GET "/posts/8" for 10.240.3.196 at 2023-11-26 20:50:29 +0000
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 9.1ms | Allocations: 6004)
+  Rendered posts/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 6670)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 961)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 13874)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.5ms | Allocations: 14699)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--55f24d966467576f03efd887a5a1215f6877792b/IMG_2896.PNG" for 10.240.3.196 at 2023-11-26 20:50:29 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--55f24d966467576f03efd887a5a1215f6877792b", "filename"=>"IMG_2896"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+[36m  S3 Storage (1.2ms) [0m[34mGenerated URL for file at key: jc5e87yfgjxyhu20ulztssmfum3k (https://storage-s3-123.s3.amazonaws.com/jc5e87yfgjxyhu20ulztssmfum3k?response-content-disposition=inline%3B%20filename%3D%22IMG_2896.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2896.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T205029Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cb0055e5a5b0e57e5c8003f4a832f9bfd6db919394c30770d96e4f234da0ecfd)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/jc5e87yfgjxyhu20ulztssmfum3k?response-content-disposition=inline%3B%20filename%3D%22IMG_2896.PNG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2896.PNG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T205029Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cb0055e5a5b0e57e5c8003f4a832f9bfd6db919394c30770d96e4f234da0ecfd
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 3976)
+
+
+Started GET "/posts/8/edit" for 10.240.3.196 at 2023-11-26 20:50:48 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:16
+  Rendered posts/_form.html.erb (Duration: 2.8ms | Allocations: 2130)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2279)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 183)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 8567)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms | Allocations: 9339)
+
+
+Started PATCH "/posts/8" for 10.240.3.196 at 2023-11-26 20:50:57 +0000
+Processing by PostsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"user_id"=>"4", "text"=>"cc", "images"=>[""], "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f526c550008 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-77775-5f449u.jpg>, @content_type="image/jpeg", @original_filename="IMG_0245.jpg", @headers="Content-Disposition: form-data; name=\"post[avatar]\"; filename=\"IMG_0245.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Post", "id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ?, "avatar" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2023-11-26 20:50:58.022997"], ["avatar", "ixvuy6yktvkqeqr8l1l9.jpg"], ["id", 8]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "avatar" = ? WHERE "posts"."id" = ?[0m  [["avatar", "image/upload/v1701031858/ixvuy6yktvkqeqr8l1l9.jpg"], ["id", 8]]
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (37.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:41:in `block in update'
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/posts/8
+Completed 302 Found in 712ms (ActiveRecord: 38.9ms | Allocations: 9947)
+
+
+Started GET "/posts/8" for 10.240.3.196 at 2023-11-26 20:50:58 +0000
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 5.7ms | Allocations: 3653)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4276)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 961)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 11336)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.4ms | Allocations: 12110)
+
+
+Started GET "/posts" for 10.240.3.196 at 2023-11-26 20:51:14 +0000
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  Rendered posts/_post.html.erb (Duration: 19.8ms | Allocations: 5421)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 5.2ms | Allocations: 3557)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 4.5ms | Allocations: 3547)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 4.8ms | Allocations: 3547)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 4.9ms | Allocations: 3547)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 4.6ms | Allocations: 3597)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 4.7ms | Allocations: 3655)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  Rendered posts/_post.html.erb (Duration: 3.9ms | Allocations: 4201)
+  Rendered posts/index.html.erb within layouts/application (Duration: 57.9ms | Allocations: 33174)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 961)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 67.8ms | Allocations: 40372)
+Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 2.0ms | Allocations: 40735)
+
+
