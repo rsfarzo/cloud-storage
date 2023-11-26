@@ -12,15 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
+    <%#= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id, :value => current_user.id , hidden: true %>
   </div>
 
   <div>
     <%= form.label :text, style: "display: block" %>
     <%= form.text_field :text %>
   </div>
-
+  <diV>
+    <%= form.file_field :images, multiple: true %><br>
+  </div>
+  
   <div>
     <%= form.submit %>
   </div>

@@ -1917,3 +1917,455 @@ Redirected to https://storage-s3-123.s3.amazonaws.com/ec4li2y8uqv16eoz3z0hjlgqaq
 Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2091)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20231126025247)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "text" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231126025247"]]
+  [1m[36mTRANSACTION (37.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 10.240.2.255 at 2023-11-26 03:08:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 283)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 741)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 266)
+  Rendered layout layouts/application.html.erb (Duration: 205.8ms | Allocations: 74656)
+Completed 200 OK in 479ms (Views: 208.5ms | ActiveRecord: 0.0ms | Allocations: 359801)
+
+
+Started GET "/users/sign_in" for 10.240.2.255 at 2023-11-26 03:08:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 583)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 9401)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 15662)
+Completed 200 OK in 39ms (Views: 28.2ms | ActiveRecord: 0.7ms | Allocations: 22725)
+
+
+Started POST "/users/sign_in" for 10.240.2.255 at 2023-11-26 03:08:49 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"so@mail.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign Me In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "so@mail.net"], ["LIMIT", 1]]
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/
+Completed 303 See Other in 236ms (ActiveRecord: 0.2ms | Allocations: 7762)
+
+
+Started GET "/" for 10.240.2.255 at 2023-11-26 03:08:49 +0000
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 1027)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 7298)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 7614)
+
+
+Started GET "/posts" for 10.240.2.255 at 2023-11-26 03:08:55 +0000
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1151)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 943)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 8233)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 10740)
+
+
+Started GET "/posts/new" for 10.240.2.255 at 2023-11-26 03:09:04 +0000
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.3ms | Allocations: 3068)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 3340)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 3429)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 6321)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+  <div>
+    <%= form.label :text, style: "display: block" %>
+    <%= form.text_field :text %>
+  </div>
+    <%= form.text_field :title, placeholder: "Title" %><br>
+    <%= form.text_area :content %><br><br>
+    <%= form.file_field :images, multiple: true %><br>
+    <%= form.submit %>
+  <% end %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>:
+  app/views/posts/new.html.erb:3
+
+Started POST "/__better_errors/2986c426cb23255a/variables" for 10.240.2.255 at 2023-11-26 03:09:04 +0000
+Started GET "/posts" for 10.240.2.255 at 2023-11-26 03:10:00 +0000
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 815)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 925)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 7761)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 8044)
+
+
+Started GET "/posts" for 10.240.1.75 at 2023-11-26 03:12:26 +0000
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1046)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 1335)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 223)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 9039)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.1ms | Allocations: 10141)
+
+
+Started GET "/posts/new" for 10.240.1.75 at 2023-11-26 03:12:29 +0000
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 21.8ms | Allocations: 3029)
+  Rendered posts/new.html.erb within layouts/application (Duration: 23.8ms | Allocations: 3294)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 3382)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 3695)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+  <div>
+    <%= form.label :text, style: "display: block" %>
+    <%= form.text_field :text %>
+  </div>
+    <%= form.text_field :title, placeholder: "Title" %><br>
+    <%= form.text_area :content %><br><br>
+    <%= form.file_field :images, multiple: true %><br>
+    <%= form.submit %>
+  <% end %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>:
+  app/views/posts/new.html.erb:3
+
+Started POST "/__better_errors/5f3ed1719ba66ef9/variables" for 10.240.1.75 at 2023-11-26 03:12:29 +0000
+Started GET "/posts/new" for 10.240.2.100 at 2023-11-26 03:14:23 +0000
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 45.0ms | Allocations: 30881)
+  Rendered posts/new.html.erb within layouts/application (Duration: 45.9ms | Allocations: 31187)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 1331)
+  Rendered shared/_toast.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 60.3ms | Allocations: 39205)
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.1ms | Allocations: 40284)
+
+
+Started GET "/posts/new" for 10.240.2.100 at 2023-11-26 03:17:38 +0000
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:16
+  Rendered posts/_form.html.erb (Duration: 6.3ms | Allocations: 2324)
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2627)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 550)
+  Rendered shared/_toast.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 9837)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.1ms | Allocations: 10914)
+
+
+Started GET "/" for 10.240.2.100 at 2023-11-26 03:18:14 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 94)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 1005)
+  Rendered shared/_toast.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 7383)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.1ms | Allocations: 8002)
+
+
+Started GET "/rails/db" for 10.240.2.100 at 2023-11-26 03:18:24 +0000
+Processing by RailsDb::DashboardController#index as HTML
+  Rendering layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application (Duration: 4.0ms | Allocations: 889)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_header.html.erb (Duration: 3.6ms | Allocations: 2106)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_sidebar.html.erb (Duration: 1.1ms | Allocations: 782)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_gems.html.erb (Duration: 0.6ms | Allocations: 567)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_footer.html.erb (Duration: 2.2ms | Allocations: 1755)
+  Rendered layout /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/layouts/rails_db/application.html.erb (Duration: 25.2ms | Allocations: 13831)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.2ms | Allocations: 14994)
+
+
+Started GET "/rails/db/tables/active_storage_blobs/data" for 10.240.2.100 at 2023-11-26 03:18:28 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_blobs"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_blobs"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.3ms | Allocations: 181)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 15.3ms | Allocations: 11691)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 7.0ms | Allocations: 9459)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.3ms | Allocations: 1435)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 51.7ms | Allocations: 46367)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 53.7ms | Allocations: 49496)
+Completed 200 OK in 62ms (Views: 52.6ms | ActiveRecord: 3.5ms | Allocations: 53744)
+
+
+Started GET "/rails/db/tables/active_storage_attachments/data" for 10.240.2.100 at 2023-11-26 03:18:59 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_attachments"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 6.1ms | Allocations: 8536)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 4.7ms | Allocations: 8043)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.7ms | Allocations: 911)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 911)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 911)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 31.7ms | Allocations: 33395)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 32.8ms | Allocations: 35844)
+Completed 200 OK in 38ms (Views: 30.6ms | ActiveRecord: 3.2ms | Allocations: 38624)
+
+
+Started GET "/rails/db/tables/active_storage_variant_records/data" for 10.240.2.100 at 2023-11-26 03:19:11 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_variant_records"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_variant_records"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 4.3ms | Allocations: 7001)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 8.6ms | Allocations: 6705)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 21.8ms | Allocations: 20633)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 22.6ms | Allocations: 22360)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.8ms | Allocations: 25051)
+
+
+Started GET "/rails/db/tables/active_storage_blobs/data" for 10.240.2.100 at 2023-11-26 03:19:13 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_blobs"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_blobs"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 13.9ms | Allocations: 9610)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 12.8ms | Allocations: 9456)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 2.1ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.8ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1040)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 62.1ms | Allocations: 38796)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 63.9ms | Allocations: 41606)
+Completed 200 OK in 70ms (Views: 61.1ms | ActiveRecord: 4.0ms | Allocations: 44187)
+
+
+Started GET "/rails/db/tables/active_storage_attachments/data" for 10.240.2.100 at 2023-11-26 03:19:26 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"active_storage_attachments"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_storage_attachments"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 5.6ms | Allocations: 8197)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 5.0ms | Allocations: 8043)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.6ms | Allocations: 911)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 911)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 911)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 30.2ms | Allocations: 31260)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 31.2ms | Allocations: 33709)
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 3.1ms | Allocations: 36269)
+
+
+Started GET "/rails/db/tables/users/data" for 10.240.2.100 at 2023-11-26 03:19:36 +0000
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"users"}
+  [1m[36m Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendering /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/shared/_exp_col.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 6.3ms | Allocations: 9217)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_condition_fields.html.erb (Duration: 5.1ms | Allocations: 8588)
+  [1m[36m Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1031)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.7ms | Allocations: 1031)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.4ms | Allocations: 1031)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.3ms | Allocations: 1031)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_row.html.erb (Duration: 1.5ms | Allocations: 1031)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_sql.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/_data.html.erb (Duration: 35.3ms | Allocations: 37909)
+  Rendered /usr/local/rvm/gems/ruby-3.2.2/gems/rails_db-2.4.2/app/views/rails_db/tables/data.js.erb (Duration: 36.8ms | Allocations: 40992)
+Completed 200 OK in 41ms (Views: 32.8ms | ActiveRecord: 4.7ms | Allocations: 43566)
+
+
+Started GET "/posts/new" for 10.240.2.100 at 2023-11-26 03:20:07 +0000
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:16
+  Rendered posts/_form.html.erb (Duration: 3.8ms | Allocations: 2344)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2650)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 550)
+  Rendered shared/_toast.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 9887)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.1ms | Allocations: 10968)
+
+
+Started GET "/posts/new" for 10.240.2.100 at 2023-11-26 03:20:25 +0000
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:16
+  Rendered posts/_form.html.erb (Duration: 3.2ms | Allocations: 2158)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2461)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 550)
+  Rendered shared/_toast.html.erb (Duration: 3.1ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 9671)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms | Allocations: 10748)
+
+
+Started POST "/posts" for 10.240.2.100 at 2023-11-26 03:21:39 +0000
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"user_id"=>"5", "text"=>"First multi", "images"=>["", #<ActionDispatch::Http::UploadedFile:0x00007fa4e8d84f20 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-14420-23usj0.png>, @content_type="image/png", @original_filename="large green screen.png", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"large green screen.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007fa4e8d84ed0 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-14420-ty1pju.JPG>, @content_type="image/jpeg", @original_filename="IMG_3155.JPG", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"IMG_3155.JPG\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007fa4e8d84e80 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-14420-xgjzqc.JPG>, @content_type="image/jpeg", @original_filename="IMG_3157.JPG", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"IMG_3157.JPG\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Post"}
+[31mUnpermitted parameter: :images. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007fa4e907fc98>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"user_id"=>"5", "text"=>"First multi", "images"=>["", #<ActionDispatch::Http::UploadedFile:0x00007fa4e8d84f20 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-14420-23usj0.png>, @content_type="image/png", @original_filename="large green screen.png", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"large green screen.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007fa4e8d84ed0 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-14420-ty1pju.JPG>, @content_type="image/jpeg", @original_filename="IMG_3155.JPG", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"IMG_3155.JPG\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007fa4e8d84e80 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-14420-xgjzqc.JPG>, @content_type="image/jpeg", @original_filename="IMG_3157.JPG", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"IMG_3157.JPG\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["text", "First multi"], ["created_at", "2023-11-26 03:21:39.605100"], ["updated_at", "2023-11-26 03:21:39.605100"]]
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (25.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/posts/1
+Completed 302 Found in 32ms (ActiveRecord: 25.9ms | Allocations: 4613)
+
+
+Started GET "/posts/1" for 10.240.2.100 at 2023-11-26 03:21:39 +0000
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.4ms | Allocations: 190)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1412)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 961)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 8411)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 10781)
+
+
+Started GET "/posts" for 10.240.2.100 at 2023-11-26 03:21:58 +0000
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1147)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 961)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 8124)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 8483)
+
+
+Started GET "/posts" for 10.240.2.100 at 2023-11-26 03:22:00 +0000
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 940)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 961)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7917)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 8196)
+
+
+Started GET "/posts/1" for 10.240.2.100 at 2023-11-26 03:22:09 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 580)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 961)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 7549)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 8318)
+
+
