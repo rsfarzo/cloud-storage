@@ -14279,3 +14279,120 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.1ms | Allocations: 9860)
 
 
+Started POST "/posts" for 10.240.0.69 at 2023-11-26 23:01:42 +0000
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"user_id"=>"4", "text"=>"yes", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2c25a4a648 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-24263-nxw656.JPG>, @content_type="image/jpeg", @original_filename="IMG_2668.JPG", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"IMG_2668.JPG\"\r\nContent-Type: image/jpeg\r\n">, "images"=>["", #<ActionDispatch::Http::UploadedFile:0x00007f2c25a4a5f8 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-24263-pvjw0x.JPG>, @content_type="image/jpeg", @original_filename="IMG_3155.JPG", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"IMG_3155.JPG\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007f2c25a4a5a8 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-24263-hknxnj.JPG>, @content_type="image/jpeg", @original_filename="IMG_3154.JPG", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"IMG_3154.JPG\"\r\nContent-Type: image/jpeg\r\n">], "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f2c25a4a558 @tempfile=#<Tempfile:/tmp/RackMultipart20231126-24263-vvr9ve.PNG>, @content_type="image/png", @original_filename="IMG_2426.PNG", @headers="Content-Disposition: form-data; name=\"post[avatar]\"; filename=\"IMG_2426.PNG\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "text", "created_at", "updated_at", "avatar") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["text", "yes"], ["created_at", "2023-11-26 23:01:42.669964"], ["updated_at", "2023-11-26 23:01:42.669964"], ["avatar", "ycofsknl5wdn5igw91ej.png"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "2yd8s6y8nk6qc5ny2y6rwh2txr80"], ["filename", "IMG_2668.JPG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 31734], ["checksum", "VAA8FzCXPzPdWPfNdbMiCA=="], ["created_at", "2023-11-26 23:01:42.676258"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "image"], ["record_type", "Post"], ["record_id", 10], ["blob_id", 24], ["created_at", "2023-11-26 23:01:42.677612"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "yd1rw9w3qltm7crr85ceq1znqi9r"], ["filename", "IMG_3155.JPG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 48841], ["checksum", "naJ4UCDWkmSVd3WADQSq6g=="], ["created_at", "2023-11-26 23:01:42.679696"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 10], ["blob_id", 25], ["created_at", "2023-11-26 23:01:42.681242"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "w0iimj8t8kb2dfg5xtplw7m8t33i"], ["filename", "IMG_3154.JPG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon"], ["byte_size", 66556], ["checksum", "dr0atY+sbJRVjXe5a8197Q=="], ["created_at", "2023-11-26 23:01:42.682812"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 10], ["blob_id", 26], ["created_at", "2023-11-26 23:01:42.684180"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "avatar" = ? WHERE "posts"."id" = ?[0m  [["avatar", "image/upload/v1701039703/ycofsknl5wdn5igw91ej.jpg"], ["id", 10]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2023-11-26 23:01:42.685245"], ["id", 10]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (30.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+[36m  S3 Storage (116.0ms) [0m[32mUploaded file to key: yd1rw9w3qltm7crr85ceq1znqi9r (checksum: naJ4UCDWkmSVd3WADQSq6g==)[0m
+[36m  S3 Storage (83.3ms) [0m[32mUploaded file to key: w0iimj8t8kb2dfg5xtplw7m8t33i (checksum: dr0atY+sbJRVjXe5a8197Q==)[0m
+[36m  S3 Storage (66.8ms) [0m[32mUploaded file to key: 2yd8s6y8nk6qc5ny2y6rwh2txr80 (checksum: VAA8FzCXPzPdWPfNdbMiCA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: f2c7396a-a2bf-4786-9611-623698338148) to Async(default) with arguments: #<GlobalID:0x00007f2c253b4860 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/24>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 143f646d-6328-4c77-a621-63a077b27499) to Async(default) with arguments: #<GlobalID:0x00007f2c253b1520 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/25>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 26ca7e8f-ab21-4d11-9b64-0f37388f1ea1) to Async(default) with arguments: #<GlobalID:0x00007f2c2539ed08 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/26>>
+Redirected to https://glowing-couscous-x77v647qwqrf6j6-3000.app.github.dev/posts/10
+Completed 302 Found in 1076ms (ActiveRecord: 32.2ms | Allocations: 179830)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f2c7396a-a2bf-4786-9611-623698338148]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f2c7396a-a2bf-4786-9611-623698338148] Performing ActiveStorage::AnalyzeJob (Job ID: f2c7396a-a2bf-4786-9611-623698338148) from Async(default) enqueued at 2023-11-26T23:01:43Z with arguments: #<GlobalID:0x00007f2c253865c8 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/24>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [143f646d-6328-4c77-a621-63a077b27499]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [143f646d-6328-4c77-a621-63a077b27499] Performing ActiveStorage::AnalyzeJob (Job ID: 143f646d-6328-4c77-a621-63a077b27499) from Async(default) enqueued at 2023-11-26T23:01:43Z with arguments: #<GlobalID:0x00007f2c25355680 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/25>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f2c7396a-a2bf-4786-9611-623698338148] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f2c7396a-a2bf-4786-9611-623698338148]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f2c7396a-a2bf-4786-9611-623698338148]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 24]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f2c7396a-a2bf-4786-9611-623698338148]   [1m[36mTRANSACTION (28.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f2c7396a-a2bf-4786-9611-623698338148] Performed ActiveStorage::AnalyzeJob (Job ID: f2c7396a-a2bf-4786-9611-623698338148) from Async(default) in 47.73ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [143f646d-6328-4c77-a621-63a077b27499] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [143f646d-6328-4c77-a621-63a077b27499]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [143f646d-6328-4c77-a621-63a077b27499]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 25]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [143f646d-6328-4c77-a621-63a077b27499]   [1m[36mTRANSACTION (26.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [143f646d-6328-4c77-a621-63a077b27499] Performed ActiveStorage::AnalyzeJob (Job ID: 143f646d-6328-4c77-a621-63a077b27499) from Async(default) in 81.79ms
+Started GET "/posts/10" for 10.240.0.69 at 2023-11-26 23:01:43 +0000
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 10], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  Rendered posts/_post.html.erb (Duration: 8.3ms | Allocations: 5579)
+  Rendered posts/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 6463)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 1001)
+  Rendered shared/_toast.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered shared/_file_mgr.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 14097)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.7ms | Allocations: 16441)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [26ca7e8f-ab21-4d11-9b64-0f37388f1ea1]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [26ca7e8f-ab21-4d11-9b64-0f37388f1ea1] Performing ActiveStorage::AnalyzeJob (Job ID: 26ca7e8f-ab21-4d11-9b64-0f37388f1ea1) from Async(default) enqueued at 2023-11-26T23:01:43Z with arguments: #<GlobalID:0x00007f2c46ae05a0 @uri=#<URI::GID gid://rails-template/ActiveStorage::Blob/26>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [26ca7e8f-ab21-4d11-9b64-0f37388f1ea1] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [26ca7e8f-ab21-4d11-9b64-0f37388f1ea1]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [26ca7e8f-ab21-4d11-9b64-0f37388f1ea1]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 26]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [26ca7e8f-ab21-4d11-9b64-0f37388f1ea1]   [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [26ca7e8f-ab21-4d11-9b64-0f37388f1ea1] Performed ActiveStorage::AnalyzeJob (Job ID: 26ca7e8f-ab21-4d11-9b64-0f37388f1ea1) from Async(default) in 35.51ms
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--47a77143109a44128a4401a113522961ca0eb4bf/IMG_3155.JPG" for 10.240.0.69 at 2023-11-26 23:01:43 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--47a77143109a44128a4401a113522961ca0eb4bf", "filename"=>"IMG_3155"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+[36m  S3 Storage (1.5ms) [0m[34mGenerated URL for file at key: yd1rw9w3qltm7crr85ceq1znqi9r (https://storage-s3-123.s3.amazonaws.com/yd1rw9w3qltm7crr85ceq1znqi9r?response-content-disposition=inline%3B%20filename%3D%22IMG_3155.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3155.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T230143Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2d701852347b2a8a1ee7be8b913143e532f8059d658d23d3ab400fae9d4ac023)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/yd1rw9w3qltm7crr85ceq1znqi9r?response-content-disposition=inline%3B%20filename%3D%22IMG_3155.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3155.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T230143Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2d701852347b2a8a1ee7be8b913143e532f8059d658d23d3ab400fae9d4ac023
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2087)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0c437ba3f3a10aa4b4f8e1f1252cf0021fe83b89/IMG_2668.JPG" for 10.240.0.69 at 2023-11-26 23:01:43 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0c437ba3f3a10aa4b4f8e1f1252cf0021fe83b89", "filename"=>"IMG_2668"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: 2yd8s6y8nk6qc5ny2y6rwh2txr80 (https://storage-s3-123.s3.amazonaws.com/2yd8s6y8nk6qc5ny2y6rwh2txr80?response-content-disposition=inline%3B%20filename%3D%22IMG_2668.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2668.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T230144Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ff0b87baf4a241a15c0638aaa4c5351231c9bbe47e361b27aa9b0d9f7e8896a7)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/2yd8s6y8nk6qc5ny2y6rwh2txr80?response-content-disposition=inline%3B%20filename%3D%22IMG_2668.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_2668.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T230144Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ff0b87baf4a241a15c0638aaa4c5351231c9bbe47e361b27aa9b0d9f7e8896a7
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2089)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--24e74f8690f62f7eef62649211fafdde09c2fe9b/IMG_3154.JPG" for 10.240.0.69 at 2023-11-26 23:01:44 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBIdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--24e74f8690f62f7eef62649211fafdde09c2fe9b", "filename"=>"IMG_3154"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+[36m  S3 Storage (0.8ms) [0m[34mGenerated URL for file at key: w0iimj8t8kb2dfg5xtplw7m8t33i (https://storage-s3-123.s3.amazonaws.com/w0iimj8t8kb2dfg5xtplw7m8t33i?response-content-disposition=inline%3B%20filename%3D%22IMG_3154.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3154.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T230144Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=189c9d1afff4b69fd1999784e575c98d365dec6d35982ccf6504aada4798b6e9)[0m
+Redirected to https://storage-s3-123.s3.amazonaws.com/w0iimj8t8kb2dfg5xtplw7m8t33i?response-content-disposition=inline%3B%20filename%3D%22IMG_3154.JPG%22%3B%20filename%2A%3DUTF-8%27%27IMG_3154.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARUNYCWPL5TLAFUBY%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T230144Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=189c9d1afff4b69fd1999784e575c98d365dec6d35982ccf6504aada4798b6e9
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2085)
+
+
