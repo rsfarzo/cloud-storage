@@ -20054,3 +20054,34 @@ Redirected to https://storage-s3-123.s3.amazonaws.com/djxo3ocv7g85qdezs227lqtvrr
 Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2219)
 
 
+Started GET "/posts" for 127.0.0.1 at 2023-11-27 14:50:49 -0600
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:10
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/views/posts/_post.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:15
+  Rendered posts/_post.html.erb (Duration: 98.4ms | Allocations: 34240)
+  Rendered posts/index.html.erb within layouts/application (Duration: 143.7ms | Allocations: 35742)
+  Rendered layout layouts/application.html.erb (Duration: 144.0ms | Allocations: 35831)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 5.5ms | Allocations: 36937)
+
+
+
+NoMethodError - undefined method `key' for #<AvatarUploader:0x000000010967f5c0 @model=#<Post id: 2, user_id: 5, text: "2nd", created_at: "2023-11-26 03:30:37.495266000 +0000", updated_at: "2023-11-26 05:52:22.158569000 +0000", avatar: nil>, @mounted_as=:avatar, @staged=false, @file=nil, @filename=nil, @cache_id=nil, @identifier=nil, @deduplication_index=nil, @versions=nil>:
+  app/views/posts/_post.html.erb:20
+  app/views/posts/index.html.erb:9
+  app/views/posts/index.html.erb:5
+
+Started POST "/__better_errors/02d4afd8a3a30d41/variables" for 127.0.0.1 at 2023-11-27 14:50:50 -0600

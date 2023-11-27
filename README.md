@@ -122,6 +122,17 @@ mount_uploader :imagelib, AvatarUploader
     mount_uploader :avatar, AvatarUploader
 ```
 
+```
+      <% if !post.avatar.nil? %> <br>CL uploader:
+          <%= cl_image_tag post.avatar, :width=>150, :crop=>"fill" %>
+      <% end %>
+      
+      <% if post.ava.persisted? %><br> Cl not uploader:
+        <%= cl_image_tag post.ava.key, :width=>150 %>
+      <% end %>
+  ```
+
+
 ## Postgres for prod env
 - change database.yml 
 - `rails db:create`
