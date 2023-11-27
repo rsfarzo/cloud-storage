@@ -94,6 +94,9 @@ amazon:
 
 Continuing with example:
 
+- Cloudinary alternate:
+[perhaps no carrierwave](https://dev.to/nilomiranda/setting-up-image-upload-with-cloudinary-rails-and-active-storage-3941)
+
 - Generater an uploaded, modify Posts to include a string for the image
 ```
 rails generate uploader Avatar

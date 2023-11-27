@@ -14,4 +14,5 @@ class Post < ApplicationRecord
     has_one_attached :image, service: :amazon
     has_many_attached :images, service: :amazon
     mount_uploader :avatar, AvatarUploader
+    has_one_attached :ava, service: :cloudinary
 end

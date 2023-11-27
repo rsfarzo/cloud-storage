@@ -30,6 +30,10 @@
     <%= form.label :avatar %>
     <%= form.file_field :avatar %>
   </div>
+  <div class="field">
+    <%= form.label :ava %>
+    <%= form.file_field :ava, direct_upload: true %>
+  </div>
   <div>
     <%= form.submit %>
   </div>
