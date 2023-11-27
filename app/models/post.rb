@@ -10,9 +10,12 @@
 #  user_id    :integer
 #
 class Post < ApplicationRecord
-
-    has_one_attached :image, service: :amazon
-    has_many_attached :images, service: :amazon
-    mount_uploader :avatar, AvatarUploader
-    has_one_attached :ava, service: :cloudinary
+  # one image @ AWS:
+  has_one_attached :image, service: :amazon 
+  # array of simultaneoulsy uploaded images @ AWS:
+  has_many_attached :images, service: :amazon
+  # one image @ Cloudinary:
+  has_one_attached :ava, service: :cloudinary
+  # Cloudinary with CarrierWave, stored in this model metadata as string:
+  mount_uploader :avatar, AvatarUploader 
 end

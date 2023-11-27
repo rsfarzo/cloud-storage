@@ -8,19 +8,19 @@
   <div class="card-body">
     <div id="<%= dom_id post %>">
       <% if post.image.persisted? %>Amazon one:
-        <IMG src="<%= url_for(post.image) %>" style="height:100px">
+        <%= image_tag url_for(post.image), :height=>100 %>
       <% end %>
+
       <% if !post.images.nil? 
-          post.images.each { |img| %><br>Amazon n:
-            <IMG src="<%= url_for(img) %>" style="height:100px">
-          <% } %>
+        post.images.each { |img| %><br>Amazon n:<br>
+          <%= image_tag url_for(img), :height=>100 %>
+        <% } %>
       <% end %>
 
       <% if !post.avatar.nil? %> <br>CL uploader:
           <%= cl_image_tag post.avatar, :width=>150, :crop=>"fill" %>
       <% end %>
       
-      <!-- #% debugger %-->
       <% if post.ava.persisted? %><br> Cl not uploader:
         <%= cl_image_tag post.ava.key, :width=>150 %>
       <% end %>

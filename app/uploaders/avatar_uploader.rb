@@ -1,8 +1,9 @@
 class AvatarUploader < CarrierWave::Uploader::Base
+  include Cloudinary::CarrierWave
+end
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-  include Cloudinary::CarrierWave
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
@@ -44,4 +45,3 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-end
