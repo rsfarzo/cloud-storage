@@ -40,7 +40,7 @@ amazon:
    bucket: <%= ENV["S3_BUCKET"] %>
 ```
 ### User avatar with s3:
-- In `user.rb` model: `has_one_attached :avatar`
+- In `user.rb` model: `has_one_attached :avatar, service: :amazon`
 - In `application_controller.rb` configure_permitted_parameters to permit: ` :avatar`
 - In `new.html.erb: 
 ```
@@ -111,8 +111,13 @@ end
 mount_uploader :imagelib, AvatarUploader
 ```
 
-## Template that includes devise, BS5
-- The following are how features and config were applied.
+## `post.rb` model
+2 amazon and 1 cloudinary through uploader
+```
+    has_one_attached :image, service: :amazon
+    has_many_attached :images, service: :amazon
+    mount_uploader :avatar, AvatarUploader
+```
 
 ## Postgres for prod env
 - change database.yml 

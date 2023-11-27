@@ -11,7 +11,7 @@
 #
 class Post < ApplicationRecord
 
-    has_one_attached :image
-    has_many_attached :images
+    has_one_attached :image, service: :amazon
+    has_many_attached :images, service: :amazon
     mount_uploader :avatar, AvatarUploader
 end
