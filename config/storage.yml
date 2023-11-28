@@ -19,7 +19,8 @@ cloudinary:
     cloud_name: <%= ENV["cloudinary_cloud"] %>
     api_key: <%= ENV["cloudinary_key"] %>
     api_secret: <%= ENV["cloudinary_secret"] %>
-
+    secure: true
+    cdn_subdomain: true
 # Uploader does not require this
 
 # Remember not to checkin your GCS keyfile to a repository

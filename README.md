@@ -1,9 +1,10 @@
 
 # Active Storage
 
-- Uses AWS S3 for `User.avatar Post.image Post.images[]`
-  - no migrations necessary
+- Uses AWS S3 for `User.avatar`, `Post.image`, and `Post.images[]`
+- Uses Cloudinary for `Post.ava`
 - Uses Cloudinary & Carrierwave for `Post.avatar`
+  - a bit more complicated, but allows for your own Active Record integration
 
 Gems:
 ```
@@ -17,8 +18,8 @@ Terminal:
 rails active_storage:install
 rails db:migrate
 ```
-## AWS S3
-- using .env, so add to .gitignore
+# 1. AWS S3
+- using `.env`, so add to `.gitignore`
 ```
 S3_BUCKET=bbbbbbbbbbb
 AWS_SECRET_KEY=oO+B16ZzfEi
@@ -68,12 +69,13 @@ amazon:
   <diV>
     <%= form.file_field :images, multiple: true  %><br>
   </div>
-  <div class="field">
+  <div>
     <%= form.label :avatar %>
     <%= form.file_field :avatar %>
   </div>
   ```
-
+- In `config/storage.yml`:
+  config.active_storage.service = :amazon # irrelvant if specified in model? :cloudinary
 
 
 - [Overview](https://edgeguides.rubyonrails.org/active_storage_overview.html)
@@ -85,18 +87,71 @@ amazon:
 - [Multi files](https://medium.com/@jedwardmook/uploading-multiple-files-using-rails-active-storage-and-react-219f07b5ac25)
 - [Multiple storage services](https://discuss.rubyonrails.org/t/activestorage-with-multiple-storage-services-and-multiple-environments-issue/82497)
 
-### Carrierwave, Cloudinary
+# 2. Cloudinary
+- ref. [Super simple](https://dev.to/nilomiranda/setting-up-image-upload-with-cloudinary-rails-and-active-storage-3941)
+- In `config/storage.yml` 
+```
+cloudinary:
+    service: Cloudinary
+    cloud_name: <%= ENV["cloudinary_cloud"] %>
+    api_key: <%= ENV["cloudinary_key"] %>
+    api_secret: <%= ENV["cloudinary_secret"] %>
+    secure: true
+    cdn_subdomain: true
+    #folder: optional anyfoldername
+```
+
+- or (I do not do this) `config/cloudinary.yml`:
+```
+production:
+    cloud_name: <%= ENV["cloudinary_cloud"] %>
+    api_key: <%= ENV["cloudinary_key"] %>
+    api_secret: <%= ENV["cloudinary_secret"] %>
+    secure: true
+    cdn_subdomain: true
+```
+I skip this: `activestorage.js` in your application's JavaScript bundle:
+```
+//= require activestorage
+```
+
+- In `config/environments/development.rb`
+```
+config.active_storage.service = :cloudinary
+```
+- In the model `Post.rb`, be sure to use the service attribute to disambiguate multiple ones
+```
+  # one image @ Cloudinary:
+  has_one_attached :ava, service: :cloudinary
+```
+
+# 3. Carrierwave, Active Record, Cloudinary
+Carrierwave adds a field to your Active Record models.  Active Storage will still use its own models.
+
 - [Carierwave](https://github.com/carrierwaveuploader/carrierwave)
 - [Carrierwave and Cloudinary](https://cloudinary.com/documentation/rails_carrierwave)
 - [Tutorial Cloudinary](https://training.cloudinary.com/courses/introduction-for-api-users-and-ruby-developers)
 - [Github cloudinary](https://github.com/cloudinary-training/cld-intro-ruby)
 - [Carrierwave gist](https://gist.github.com/Hinsei/346eebe1175e49296b13a5f1e28850a6)
 
-Continuing with example:
 
-- Cloudinary alternate:
-[perhaps no carrierwave](https://dev.to/nilomiranda/setting-up-image-upload-with-cloudinary-rails-and-active-storage-3941)
+- `config/storage.yml`
+```
+amazon:
+   service: S3
+   access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
+   secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
+   region: <%= ENV["AWS_REGION"] %>
+   bucket: <%= ENV["S3_BUCKET"] %>
 
+cloudinary:
+    service: Cloudinary
+    cloud_name: <%= ENV["cloudinary_cloud"] %>
+    api_key: <%= ENV["cloudinary_key"] %>
+    api_secret: <%= ENV["cloudinary_secret"] %>
+    secure: true
+    cdn_subdomain: true
+```
 - Generater an uploaded, modify Posts to include a string for the image
 ```
 rails generate uploader Avatar
@@ -109,17 +164,24 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 end
 ```
-- Mount the uploader to the posts model:
+- Edit form:
 ```
-mount_uploader :imagelib, AvatarUploader
+  <div>
+    <%= form.label :ava %>
+    <%= form.file_field :ava, direct_upload: true %>
+  </div>
 ```
 
 ## `post.rb` model
-2 amazon and 1 cloudinary through uploader
+2 amazon, 1 cloudinary, and 1 cloudinary-carrierwave uploader
 ```
-    has_one_attached :image, service: :amazon
-    has_many_attached :images, service: :amazon
-    mount_uploader :avatar, AvatarUploader
+class Post < ApplicationRecord
+ 
+  ...
+
+  # Cloudinary with CarrierWave, stored in this model metadata as string:
+  mount_uploader :avatar, AvatarUploader 
+end
 ```
 
 ```
@@ -132,6 +194,49 @@ mount_uploader :imagelib, AvatarUploader
       <% end %>
   ```
 
+# 4. services combo example:
+
+- `post.rb`
+```
+class Post < ApplicationRecord
+  # one image @ AWS:
+  has_one_attached :image, service: :amazon 
+
+  # array of simultaneoulsy uploaded images @ AWS:
+  has_many_attached :images, service: :amazon
+
+  # one image @ Cloudinary:
+  has_one_attached :ava, service: :cloudinary
+
+  # Cloudinary with CarrierWave, stored in this model metadata as string:
+  mount_uploader :avatar, AvatarUploader 
+end
+```
+
+- `views/posts/_post.html` Cloudinary has its own helpers.
+```
+  <div class="card-body">
+    <div id="<%= dom_id post %>">
+      <% if post.image.persisted? %>Amazon one:
+        <%= image_tag url_for(post.image), :height=>100 %>
+      <% end %>
+
+      <% if !post.images.nil? 
+        post.images.each { |img| %><br>Amazon n:<br>
+          <%= image_tag url_for(img), :height=>100 %>
+        <% } %>
+      <% end %>
+
+      <% if !post.avatar.nil? %> <br>CL uploader:
+          <%= cl_image_tag post.avatar, :width=>150, :crop=>"fill" %>
+      <% end %>
+      
+      <% if post.ava.persisted? %><br> Cl not uploader:
+        <%= cl_image_tag post.ava.key, :width=>150 %>
+      <% end %>
+    </div>
+  </div>
+  ```
 
 ## Postgres for prod env
 - change database.yml 
