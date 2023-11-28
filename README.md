@@ -19,6 +19,8 @@ rails active_storage:install
 rails db:migrate
 ```
 # 1. AWS S3
+[Set up S3](https://dev.to/nickmendez/how-to-configure-active-storage-with-amazon-aws-s3-cloud-storage-h)
+
 - using `.env`, so add to `.gitignore`
 ```
 S3_BUCKET=bbbbbbbbbbb
