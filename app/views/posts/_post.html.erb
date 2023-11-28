@@ -17,7 +17,7 @@
         <% } %>
       <% end %>
 
-      <% if !post.avatar.nil? %> <br>CL uploader (?nil):
+      <% if ! post.avatar.url.nil? %> <br>CL uploader:
           <%= cl_image_tag post.avatar, :width=>150, :crop=>"fill" %>
       <% end %>
       
