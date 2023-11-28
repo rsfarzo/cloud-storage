@@ -7,22 +7,29 @@
   </div>
   <div class="card-body">
     <div id="<%= dom_id post %>">
-      <% if post.image.persisted? %>Amazon one:
+      <% if post.image.attached? %>Amazon one:
         <%= image_tag url_for(post.image), :height=>100 %>
+        <%= link_to '🔽', 
+          rails_blob_path(post.image, disposition: "attachment") %>
       <% end %>
 
       <% if !post.images.nil? 
         post.images.each { |img| %><br>Amazon n:<br>
           <%= image_tag url_for(img), :height=>100 %>
+          <%= link_to '🔽', 
+            rails_blob_path(img, disposition: "attachment") %>
         <% } %>
       <% end %>
 
-      <% if !post.avatar.nil? %> <br>CL uploader:
+      <% if !post.avatar.file.nil? %> <br>CL uploader:
           <%= cl_image_tag post.avatar, :width=>150, :crop=>"fill" %>
+          <%= link_to("Download", cl_private_download_url(post.avatar.file.public_id, :attachment => true)) %>
+
       <% end %>
       
       <% if post.ava.persisted? %><br> Cl not uploader:
         <%= cl_image_tag post.ava.key, :width=>150 %>
+        <%= link_to("Download", cl_private_download_url(post.ava, :attachment => true)) %>
       <% end %>
     </div>
   </div>
