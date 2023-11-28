@@ -12,7 +12,7 @@ bin/rails active_storage:install
 bin/rails db:migrate
 ```
 3. Declare Active Storage services 
-  a. in config/storage.yml
+  - in config/storage.yml
 ```
 
 amazon:
@@ -28,7 +28,7 @@ cloudinary:
     api_key: <%= ENV["cloudinary_key"] %>
     api_secret: <%= ENV["cloudinary_secret"] %>
 ```    
-b. or just config/cloudinary.yml
+- or just config/cloudinary.yml
 
  (or cloudinary.yml)
 ```
@@ -36,11 +36,11 @@ b. or just config/cloudinary.yml
     api_key: <%= ENV["cloudinary_key"] %>
     api_secret: <%= ENV["cloudinary_secret"] %>
 ```  
-c. config/environments/development.rb, production.rb, test.rb
+- config/environments/development.rb, production.rb, test.rb
 ```
   	config.active_storage.service = :cloudinary #  :amazon
 ```
-d. store env vars (demo using dotenv for dev and env vars at Render)
+- store env vars (demo using dotenv for dev and env vars at Render)
 ```
 gem "dotenv-rails", groups: [:development, :test]
 ```
@@ -80,7 +80,7 @@ gem "dotenv-rails", groups: [:development, :test]
     end
 ```  	
 5. UI
-  a. add to file_field/s to your edit (new, update) form:
+  - add to file_field/s to your edit (new, update) form:
 ```
   <div>
     <%= form.file_field :image  %><br>
@@ -89,7 +89,7 @@ gem "dotenv-rails", groups: [:development, :test]
     <%= form.file_field :images, multiple: true  %><br>
   </div>
  ```
-  b. add to your view, existence methods vary by source, url helpers vary by source:
+  - add to your view, existence methods vary by source, url helpers vary by source:
  ```  	
       <% if post.image.attached? %>Amazon one:
         <%= image_tag url_for(post.image), :height=>100 %>
