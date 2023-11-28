@@ -1,6 +1,7 @@
 
 # Credentials
 - [rails way](https://pragmaticstudio.com/tutorials/using-active-storage-in-rails)
+- [and note production use here](https://web-crunch.com/posts/the-complete-guide-to-ruby-on-rails-encrypted-credentials)
 - `dotenv-rails` gem
 
 # Active Storage
