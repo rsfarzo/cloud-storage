@@ -14,6 +14,7 @@ bin/rails db:migrate
 3. Declare Active Storage services 
 3. a. in config/storage.yml
 ```
+
 amazon:
    service: S3
    access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
