@@ -69,7 +69,7 @@ gem "dotenv-rails", groups: [:development, :test]
       params.require(:user).permit(:email_address, :password, :image, images[])
     end
 ```  
-    - or in the case of Devise, use application controller:
+  - or in the case of Devise, use application controller:
 ```	
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up) {
