@@ -28,8 +28,7 @@ cloudinary:
     api_key: <%= ENV["cloudinary_key"] %>
     api_secret: <%= ENV["cloudinary_secret"] %>
 ```    
-- specify default storage service
-- config/environments/development.rb, production.rb, test.rb
+- specify default storage service in `config/environments/development.rb`, `production.rb`, `test.rb`:
 ```
   	config.active_storage.service = :cloudinary #  :amazon
 ```
