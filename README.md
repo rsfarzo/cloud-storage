@@ -1,4 +1,8 @@
 
+# Credentials
+- [rails way](https://pragmaticstudio.com/tutorials/using-active-storage-in-rails)
+- `dotenv-rails` gem
+
 # Active Storage
 
 - Uses AWS S3 for `User.avatar`, `Post.image`, and `Post.images[]`
