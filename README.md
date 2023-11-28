@@ -1,9 +1,18 @@
+- downloading
+- listing `representable?` etc
+- purging
+
+# Credentials
+- [rails way](https://pragmaticstudio.com/tutorials/using-active-storage-in-rails)
+- [and note production use here](https://web-crunch.com/posts/the-complete-guide-to-ruby-on-rails-encrypted-credentials)
+- `dotenv-rails` gem
 
 # Active Storage
 
-- Uses AWS S3 for `User.avatar Post.image Post.images[]`
-  - no migrations necessary
+- Uses AWS S3 for `User.avatar`, `Post.image`, and `Post.images[]`
+- Uses Cloudinary for `Post.ava`
 - Uses Cloudinary & Carrierwave for `Post.avatar`
+  - a bit more complicated, but allows for your own Active Record integration
 
 Gems:
 ```
@@ -17,8 +26,10 @@ Terminal:
 rails active_storage:install
 rails db:migrate
 ```
-## AWS S3
-- using .env, so add to .gitignore
+# 1. AWS S3
+[Set up S3](https://dev.to/nickmendez/how-to-configure-active-storage-with-amazon-aws-s3-cloud-storage-h)
+
+- using `.env`, so add to `.gitignore`
 ```
 S3_BUCKET=bbbbbbbbbbb
 AWS_SECRET_KEY=oO+B16ZzfEi
@@ -68,12 +79,13 @@ amazon:
   <diV>
     <%= form.file_field :images, multiple: true  %><br>
   </div>
-  <div class="field">
+  <div>
     <%= form.label :avatar %>
     <%= form.file_field :avatar %>
   </div>
   ```
-
+- In `config/storage.yml`:
+  config.active_storage.service = :amazon # irrelvant if specified in model? :cloudinary
 
 
 - [Overview](https://edgeguides.rubyonrails.org/active_storage_overview.html)
@@ -85,18 +97,71 @@ amazon:
 - [Multi files](https://medium.com/@jedwardmook/uploading-multiple-files-using-rails-active-storage-and-react-219f07b5ac25)
 - [Multiple storage services](https://discuss.rubyonrails.org/t/activestorage-with-multiple-storage-services-and-multiple-environments-issue/82497)
 
-### Carrierwave, Cloudinary
+# 2. Cloudinary
+- ref. [Super simple](https://dev.to/nilomiranda/setting-up-image-upload-with-cloudinary-rails-and-active-storage-3941)
+- In `config/storage.yml` 
+```
+cloudinary:
+    service: Cloudinary
+    cloud_name: <%= ENV["cloudinary_cloud"] %>
+    api_key: <%= ENV["cloudinary_key"] %>
+    api_secret: <%= ENV["cloudinary_secret"] %>
+    secure: true
+    cdn_subdomain: true
+    #folder: optional anyfoldername
+```
+
+- or (I do not do this) `config/cloudinary.yml`:
+```
+production:
+    cloud_name: <%= ENV["cloudinary_cloud"] %>
+    api_key: <%= ENV["cloudinary_key"] %>
+    api_secret: <%= ENV["cloudinary_secret"] %>
+    secure: true
+    cdn_subdomain: true
+```
+I skip this: `activestorage.js` in your application's JavaScript bundle:
+```
+//= require activestorage
+```
+
+- In `config/environments/development.rb` and `production.rb` (although I believe this is a default service and can be superceded at the model)
+```
+config.active_storage.service = :cloudinary
+```
+- In the model `Post.rb`, be sure to use the service attribute to disambiguate multiple ones
+```
+  # one image @ Cloudinary:
+  has_one_attached :ava, service: :cloudinary
+```
+
+# 3. Carrierwave, Active Record, Cloudinary
+Carrierwave adds a field to your Active Record models.  Active Storage will still use its own models.
+
 - [Carierwave](https://github.com/carrierwaveuploader/carrierwave)
 - [Carrierwave and Cloudinary](https://cloudinary.com/documentation/rails_carrierwave)
 - [Tutorial Cloudinary](https://training.cloudinary.com/courses/introduction-for-api-users-and-ruby-developers)
 - [Github cloudinary](https://github.com/cloudinary-training/cld-intro-ruby)
 - [Carrierwave gist](https://gist.github.com/Hinsei/346eebe1175e49296b13a5f1e28850a6)
 
-Continuing with example:
 
-- Cloudinary alternate:
-[perhaps no carrierwave](https://dev.to/nilomiranda/setting-up-image-upload-with-cloudinary-rails-and-active-storage-3941)
+- `config/storage.yml`
+```
+amazon:
+   service: S3
+   access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
+   secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
+   region: <%= ENV["AWS_REGION"] %>
+   bucket: <%= ENV["S3_BUCKET"] %>
 
+cloudinary:
+    service: Cloudinary
+    cloud_name: <%= ENV["cloudinary_cloud"] %>
+    api_key: <%= ENV["cloudinary_key"] %>
+    api_secret: <%= ENV["cloudinary_secret"] %>
+    secure: true
+    cdn_subdomain: true
+```
 - Generater an uploaded, modify Posts to include a string for the image
 ```
 rails generate uploader Avatar
@@ -109,17 +174,24 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 end
 ```
-- Mount the uploader to the posts model:
+- Edit form:
 ```
-mount_uploader :imagelib, AvatarUploader
+  <div>
+    <%= form.label :ava %>
+    <%= form.file_field :ava, direct_upload: true %>
+  </div>
 ```
 
 ## `post.rb` model
-2 amazon and 1 cloudinary through uploader
+2 amazon, 1 cloudinary, and 1 cloudinary-carrierwave uploader
 ```
-    has_one_attached :image, service: :amazon
-    has_many_attached :images, service: :amazon
-    mount_uploader :avatar, AvatarUploader
+class Post < ApplicationRecord
+ 
+  ...
+
+  # Cloudinary with CarrierWave, stored in this model metadata as string:
+  mount_uploader :avatar, AvatarUploader 
+end
 ```
 
 ```
@@ -132,63 +204,46 @@ mount_uploader :imagelib, AvatarUploader
       <% end %>
   ```
 
+# 4. services combo example:
 
-## Postgres for prod env
-- change database.yml 
-- `rails db:create`
-- `rails s`  instead of  `bin/dev`
-
-## bootstrap 5 & JS
-[ref](https://www.linkedin.com/pulse/rails-7-bootstrap-52-importmap-md-habibur-rahman-habib)
-
-## devise
-- [github](https://github.com/heartcombo/devise#getting-started)
-- [rails girls](https://guides.railsgirls.com/devise)
+- `post.rb`
 ```
-rails generate devise:install
+class Post < ApplicationRecord
+  # one image @ AWS:
+  has_one_attached :image, service: :amazon 
 
-<%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "nav-link" %>`
+  # array of simultaneoulsy uploaded images @ AWS:
+  has_many_attached :images, service: :amazon
 
-rails generate devise:views
-  config/initializers/devise.rb`=>`config.scoped_views = true
+  # one image @ Cloudinary:
+  has_one_attached :ava, service: :cloudinary
+
+  # Cloudinary with CarrierWave, stored in this model metadata as string:
+  mount_uploader :avatar, AvatarUploader 
+end
 ```
-[adding extra fields](https://gist.github.com/withoutwax/46a05861aa4750384df971b641170407)
-```
-rails generate migration add_token_to_users token:string
-```
-Depending on your application's configuration some manual setup may be required:
 
-  1. Ensure you have defined default url options in your environments files. Here
-     is an example of default_url_options appropriate for a development environment
-     in `config/environments/development.rb`:
+- `views/posts/_post.html` Cloudinary has its own helpers.
 ```
-       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-```
-     In production, `:host` should be set to the actual host of your application.
+  <div class="card-body">
+    <div id="<%= dom_id post %>">
+      <% if post.image.persisted? %>Amazon one:
+        <%= image_tag url_for(post.image), :height=>100 %>
+      <% end %>
 
-     * Required for all applications. *
+      <% if !post.images.nil? 
+        post.images.each { |img| %><br>Amazon n:<br>
+          <%= image_tag url_for(img), :height=>100 %>
+        <% } %>
+      <% end %>
 
-  2. Ensure you have defined root_url to *something* in your config/routes.rb.
-     For example:
-```
-       root to: "home#index"
-```    
-     * Not required for API-only Applications *
-
-  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-     For example:
-```
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-```
-     * Not required for API-only Applications *
-
-  4. You can copy Devise views (for customization) to your app by running:
-```
-       rails g devise:views
-```       
-
-
-
-- Ruby version: `3.2.2`
-- Rails version: `7.0.4.3`
+      <% if !post.avatar.nil? %> <br>CL uploader:
+          <%= cl_image_tag post.avatar, :width=>150, :crop=>"fill" %>
+      <% end %>
+      
+      <% if post.ava.persisted? %><br> Cl not uploader:
+        <%= cl_image_tag post.ava.key, :width=>150 %>
+      <% end %>
+    </div>
+  </div>
+  ```

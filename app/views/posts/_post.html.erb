@@ -21,7 +21,7 @@
         <% } %>
       <% end %>
 
-      <% if !post.avatar.file.nil? %> <br>CL uploader:
+      <% if !post.avatar.nil? %> <br>CL uploader:
           <%= cl_image_tag post.avatar, :width=>150, :crop=>"fill" %>
           <%= link_to("Download", cl_private_download_url(post.avatar.file.public_id, :attachment => true)) %>
 

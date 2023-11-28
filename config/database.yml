@@ -87,6 +87,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: boilerplate_prod #rails_template_production
-  username: rails_template
-  password: <%= ENV["RAILS_TEMPLATE_DATABASE_PASSWORD"] %>
+  database: prod
+  username: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %>
