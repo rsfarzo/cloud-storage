@@ -1,3 +1,6 @@
+- downloading
+- listing `representable?` etc
+- purging
 
 # Credentials
 - [rails way](https://pragmaticstudio.com/tutorials/using-active-storage-in-rails)
@@ -122,7 +125,7 @@ I skip this: `activestorage.js` in your application's JavaScript bundle:
 //= require activestorage
 ```
 
-- In `config/environments/development.rb`
+- In `config/environments/development.rb` and `production.rb` (although I believe this is a default service and can be superceded at the model)
 ```
 config.active_storage.service = :cloudinary
 ```
