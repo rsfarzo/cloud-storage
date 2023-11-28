@@ -1,3 +1,7 @@
+References
+- [Dev.to fast and easy](https://dev.to/nilomiranda/setting-up-image-upload-with-cloudinary-rails-and-active-storage-3941)
+- [Rubyonrails](https://edgeguides.rubyonrails.org/active_storage_overview.html)
+
 1. Gemfile:
 ```
 gem "cloudinary" # for cloudinary
@@ -11,8 +15,8 @@ gem "carrierwave", '~> 3.0'  # optional
 bin/rails active_storage:install
 bin/rails db:migrate
 ```
-3. Declare Active Storage services 
-- configuration parameters. Configuration parameters for cloudinary have several options suchs as in a `config/cloudinary.yml``
+3. Set Active Storage services 
+- Configuration parameters for cloudinary have several options suchs as in a `config/cloudinary.yml``
   - in config/storage.yml
 ```
 amazon:
@@ -37,9 +41,9 @@ cloudinary:
 gem "dotenv-rails", groups: [:development, :test]
 ```
 
-4. Active Storage declare one or many (array) attached file/s. There is no column defined on the model side (no migration), Active Storage takes care of the mapping between your records and the attachment. If we wanted a model reference to AS, then CarrierWave with Cloudinary.
+4. Create Active Storage associations to one or many attached file/s . Multi-file uploads refence an array of AS objects. There is no column defined on the model side (no migration). Active Storage takes care of the mapping between your records and the attachment. If we wanted an AR reference to AS, then use CarrierWave with Cloudinary.
 
-  - Add to your model file, such at `Post.rb` or `User.rb`.If you don't have a User model already, as in Devise:  `generate model User image:attachment`. 
+  - Add to your model file, such at `Post.rb` or `User.rb`. If you don't have a User model already, as in Devise:  `generate model User image:attachment`. 
 ``` 
   # one image @ AWS:
   has_one_attached :image, service: :amazon 
@@ -103,11 +107,7 @@ gem "dotenv-rails", groups: [:development, :test]
 ```
   user.avatar.purge
 ```
-7. Download from ui
-```
-   rails_blob_path(user.avatar, disposition: "attachment")
-```
-Non-cloudinary:
+7. Download from ui for non-cloudinary images:
 ```
 <%= link_to '🔽', 
     rails_blob_path(img, disposition: "attachment") %>
