@@ -12,7 +12,7 @@ bin/rails active_storage:install
 bin/rails db:migrate
 ```
 3. Declare Active Storage services 
-3. a. in config/storage.yml
+  a. in config/storage.yml
 ```
 
 amazon:
@@ -28,7 +28,7 @@ cloudinary:
     api_key: <%= ENV["cloudinary_key"] %>
     api_secret: <%= ENV["cloudinary_secret"] %>
 ```    
-3. b. or just config/cloudinary.yml
+b. or just config/cloudinary.yml
 
  (or cloudinary.yml)
 ```
@@ -36,15 +36,18 @@ cloudinary:
     api_key: <%= ENV["cloudinary_key"] %>
     api_secret: <%= ENV["cloudinary_secret"] %>
 ```  
-3. c. config/environments/development.rb, production.rb, test.rb
+c. config/environments/development.rb, production.rb, test.rb
 ```
   	config.active_storage.service = :cloudinary #  :amazon
 ```
-3. d. store env vars (demo using dotenv for dev and env vars at Render)
+d. store env vars (demo using dotenv for dev and env vars at Render)
+```
+gem "dotenv-rails", groups: [:development, :test]
+```
 
 4. Active Storage declare one or many (array) attached file/s. There is no column defined on the model side (no migration), Active Storage takes care of the mapping between your records and the attachment. IF we wanted a model reference to AS, then CarrierWave with Cloudinary.
 
-  4. a. Add to your model file, such at Post.rb or User.rb, several possibilities: 
+  a. Add to your model file, such at Post.rb or User.rb, several possibilities: 
 ``` 
   # one image @ AWS:
   has_one_attached :image, service: :amazon 
@@ -58,15 +61,15 @@ cloudinary:
  If you don't have a User model already, as in Devise, 
    generate model User image:attachment
  
- 4. b. update controller to allow
-  1) non-devise models
+  b. update controller to allow
+    - non-devise models
 ```
   private
     def user_params
       params.require(:user).permit(:email_address, :password, :image, images[])
     end
 ```  
-  2) or in the case of Devise, use application controller:
+    - or in the case of Devise, use application controller:
 ```	
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up) {
@@ -77,7 +80,7 @@ cloudinary:
     end
 ```  	
 5. UI
-   5. a. add to file_field/s to your edit (new, update) form:
+  a. add to file_field/s to your edit (new, update) form:
 ```
   <div>
     <%= form.file_field :image  %><br>
@@ -86,7 +89,7 @@ cloudinary:
     <%= form.file_field :images, multiple: true  %><br>
   </div>
  ```
-   5. b. add to your view, existence methods vary by source, url helpers vary by source:
+  b. add to your view, existence methods vary by source, url helpers vary by source:
  ```  	
       <% if post.image.attached? %>Amazon one:
         <%= image_tag url_for(post.image), :height=>100 %>
