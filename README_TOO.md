@@ -12,9 +12,9 @@ bin/rails active_storage:install
 bin/rails db:migrate
 ```
 3. Declare Active Storage services 
+- configuration parameters. Configuration parameters for cloudinary have several options suchs as in a `config/cloudinary.yml``
   - in config/storage.yml
 ```
-
 amazon:
    service: S3
    access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
@@ -28,14 +28,7 @@ cloudinary:
     api_key: <%= ENV["cloudinary_key"] %>
     api_secret: <%= ENV["cloudinary_secret"] %>
 ```    
-- or just config/cloudinary.yml
-
- (or cloudinary.yml)
-```
-    cloud_name: <%= ENV["cloudinary_cloud"] %>
-    api_key: <%= ENV["cloudinary_key"] %>
-    api_secret: <%= ENV["cloudinary_secret"] %>
-```  
+- specify default storage service
 - config/environments/development.rb, production.rb, test.rb
 ```
   	config.active_storage.service = :cloudinary #  :amazon
