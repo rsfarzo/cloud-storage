@@ -1,6 +1,7 @@
 References
 - [Dev.to fast and easy](https://dev.to/nilomiranda/setting-up-image-upload-with-cloudinary-rails-and-active-storage-3941)
-- [Rubyonrails](https://edgeguides.rubyonrails.org/active_storage_overview.html)
+- [Rubyonrails.org details](https://edgeguides.rubyonrails.org/active_storage_overview.html)
+- [Cloudinary and Rails](https://cloudinary.com/documentation/ruby_rails_quickstart)
 - show AWS screenshots
 - show Cloudinary screenshots
 
