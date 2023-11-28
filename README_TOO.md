@@ -37,9 +37,9 @@ cloudinary:
 gem "dotenv-rails", groups: [:development, :test]
 ```
 
-4. Active Storage declare one or many (array) attached file/s. There is no column defined on the model side (no migration), Active Storage takes care of the mapping between your records and the attachment. IF we wanted a model reference to AS, then CarrierWave with Cloudinary.
+4. Active Storage declare one or many (array) attached file/s. There is no column defined on the model side (no migration), Active Storage takes care of the mapping between your records and the attachment. If we wanted a model reference to AS, then CarrierWave with Cloudinary.
 
-  - Add to your model file, such at Post.rb or User.rb, several possibilities: 
+  - Add to your model file, such at `Post.rb` or `User.rb`.If you don't have a User model already, as in Devise:  `generate model User image:attachment`. 
 ``` 
   # one image @ AWS:
   has_one_attached :image, service: :amazon 
@@ -50,8 +50,6 @@ gem "dotenv-rails", groups: [:development, :test]
   # one image @ Cloudinary:
   has_one_attached :ava, service: :cloudinary
 ```  
- If you don't have a User model already, as in Devise, 
-   generate model User image:attachment
  
   - update controller to allow
   - non-devise models
