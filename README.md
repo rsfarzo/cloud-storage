@@ -1,4 +1,8 @@
-- downloading
+
+[Link to Presentation](https://docs.google.com/presentation/d/1yXV2cLLL3RMyuqaR0l5MeesUTAWZv1x6/edit?usp=sharing&ouid=102117242305186913702&rtpof=true&sd=true)
+
+
+
 - listing `representable?` etc
 - purging
 
